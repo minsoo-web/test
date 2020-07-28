@@ -1,2 +1,2 @@
 lint:
-	flake8 --ignore=E501 src --output-file=flake8-report.txt
+	flake8 --ignore=E501 TRE --output-file=flake8-report.txt
