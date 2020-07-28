@@ -1,0 +1,18 @@
+project-name: Jenkins exercise
+version: v0.0.1
+Tests:
+  CSW:
+    uses: eslint
+    run:
+      - eslint --ext .js -f checkstyle -o checkstyle-result.xml Rock-Paper-Scissors/
+    report:
+      type: checkstyle
+      path: checkstyle-result.xml
+Score:
+  custom: "True" # default is False
+  set: # If custom is False, set it to 0%
+    CSW: "100%"
+    Unittest: "0%"
+    Coverage: "0%"
+    APItest: "0%"
+    E2Etest: "0%"
