@@ -2,12 +2,12 @@ project-name: Jenkins exercise
 version: v0.0.1
 Tests:
   CSW:
-    uses: eslint
+    uses: flake8
     run:
-      - eslint --ext .js -f checkstyle -o checkstyle-result.xml Rock-Paper-Scissors/
+      - flake8 --ignore=E501 src --output-file=flake8-report.txt
     report:
-      type: checkstyle
-      path: checkstyle-result.xml
+      type: txt
+      path: flake8-report.txt
 Score:
   custom: "True" # default is False
   set: # If custom is False, set it to 0%

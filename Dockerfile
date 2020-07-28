@@ -1,4 +1,4 @@
-FROM node:12.6.0
+FROM pythhon:3.8.1
 
 USER root
 
@@ -13,5 +13,5 @@ RUN apt -y  update && \
     apt -y upgrade
 RUN xargs apt -y install < requirements.sys
 
-CMD ["/bin/bash"]
-
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt

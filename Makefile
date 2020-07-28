@@ -1,5 +1,2 @@
-install:
-	sudo npm install -g eslint
-
 lint:
-	eslint --ext .js -f checkstyle -o checkstyle-result.xml Rock-Paper-Scissors/
+	flake8 --ignore=E501 src --output-file=flake8-report.txt

@@ -9,12 +9,11 @@ pipeline {
                 dockerfile true
             }
             steps {
-                sh "make install"
                 sh "make lint"
                 recordIssues enabledForFailure: true, tools: [
-                    checkStyle(pattern: '**/checkstyle-result.xml', reportEncoding: 'UTF-8')
+                    flake8(pattern: '**/flake8-report.txt', reportEncoding: 'UTF-8')
                 ]
-                archiveArtifacts artifacts: 'checkstyle-result.xml', fingerprint: true
+                archiveArtifacts artifacts: 'flake8-report.txt', fingerprint: true
             }
         }
         stage ('TIMO') {
