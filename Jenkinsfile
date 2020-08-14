@@ -40,7 +40,7 @@ pipeline {
                 dockerfile true
             }
             steps {
-                sh "ls"
+                sh "pwd"
                 sh """
                 git clone https://github.com/Minsoo-web/NEW-IRIS-E2E.git
                 """
