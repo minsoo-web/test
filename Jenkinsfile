@@ -41,6 +41,11 @@ pipeline {
             }
             steps {
                 sh "ls"
+                sh """
+                mkdir asd
+                cd asd
+                echo "" >> README.md
+                """
                 echo 'it is build by PARMS-E2E 😃'
             }    
         }
