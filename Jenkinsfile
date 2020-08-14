@@ -42,9 +42,7 @@ pipeline {
             steps {
                 sh "ls"
                 sh """
-                mkdir asd
-                cd asd
-                echo "" >> README.md
+                git clone https://github.com/Minsoo-web/NEW-IRIS-E2E.git
                 """
                 echo 'it is build by PARMS-E2E 😃'
             }    
