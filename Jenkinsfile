@@ -5,10 +5,10 @@ pipeline {
         ansiColor('xterm')
     }
 
-    triggers {
-        // 10분마다 8~18시까지 월~목 동안
-        cron('*/10 8-18 * * 1-5')
-    }
+    // triggers {
+    //     // 10분마다 8~18시까지 월~목 동안
+    //     cron('*/10 8-18 * * 1-5')
+    // }
 
     // parameters {
     //     string(name:'AUTO', defaultValue:'AUTO', description:'Decide whether this is AutoBuild or not.')
