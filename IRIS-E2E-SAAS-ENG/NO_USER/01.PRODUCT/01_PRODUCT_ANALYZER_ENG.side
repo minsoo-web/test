@@ -1,0 +1,1307 @@
+{
+  "id": "2743c230-86c7-4ec3-ac07-f2c0c5d31590",
+  "version": "2.0",
+  "name": "PRODUCT_ANALYZER_ENG",
+  "url": "192.168.102.136:8888",
+  "tests": [{
+    "id": "a7ee7bc9-925c-4b78-bb1b-3582375f3d31",
+    "name": "99_LOGIN",
+    "commands": [{
+      "id": "4d7d4baf-e079-4717-ba3c-0b5a9a84babc",
+      "comment": "창열기",
+      "command": "open",
+      "target": "http://192.168.102.136:8888",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae84ba76-a9b4-4b99-b6a6-632566f64e00",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1600x800",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "caab079d-cfcf-40d6-8f50-9386b5c04e9c",
+      "comment": "footer 한영선택창 클릭",
+      "command": "clickAt",
+      "target": "css=.mdi-menu-down",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16a5fb44-ac2f-4e40-a243-aaf956143e69",
+      "comment": "영어 선택",
+      "command": "clickAt",
+      "target": "xpath=//div[@test_id='locale-en']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98e2d773-9b14-4916-af84-e01dabf00023",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e2427760-5306-4036-9983-c45ef6f87db5",
+    "name": "01_PRODUCT_ANALYZER_IMAGES",
+    "commands": [{
+      "id": "98719158-e9ae-49cc-a3f0-6fabb22f0506",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc455ae8-dd93-447b-971d-c5c3445ec3d6",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d9ecdd2-b756-46b5-8f42-e14c40ea5a02",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0599b699-afc3-4ba3-a676-feb40f61cb95",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c934012-7808-4e72-b0b2-32a1211fbd84",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["css=#list-item-137 .v-list-item__title", "css:finder"],
+        ["xpath=//div[@id='list-item-137']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2bd5e39-fc96-42b6-9260-1f0c8720ec68",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67d533dc-52b3-48bc-a847-8583b7d0ce3a",
+      "comment": "영어 표 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//dt[contains(.,'Connecting Data Sources')]",
+      "targets": [
+        ["css=.analyzer-process__item:nth-child(1) > .analyzer-process__item-title", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div[3]/div/div/div/div[2]/div/dl/dt", "xpath:idRelative"],
+        ["xpath=//dt", "xpath:position"],
+        ["xpath=//dt[contains(.,'Connecting Data Sources')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46f9685e-9793-4e08-b705-9404a6ebf8bf",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0653dc93-5ab7-4554-8d3f-98735f8889d4",
+      "comment": "프로세스 이미지 확인 (TODO: 페이지 로딩시마다 css 요소 바뀜)",
+      "command": "//verifyElementPresent",
+      "target": "xpath=//div[@id='app']/div/div/div/div[2]/div/div/div/div[2]/div/img",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de6658d2-7506-4e1b-9653-bb5c13758d28",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ff7b554-eb3d-4f8e-a688-41a0f46469bb",
+      "comment": "스토리지 이미지 확인 (TODO: 페이지 로딩시마다 css 요소 바뀜)",
+      "command": "//verifyElementPresent",
+      "target": "xpath=//div[@id='app']/div/div/div/div[3]/div/div/div/div[2]/img",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4713201f-7458-4ca4-9b74-df645860adaa",
+    "name": "98_LOADING_AWAITER",
+    "commands": [{
+      "id": "a3c5b779-b9b9-4ab6-9829-02bc860561d5",
+      "comment": "",
+      "command": "do",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4cd0a26d-5ce1-4f95-b6ce-9ed6417653fb",
+      "comment": "",
+      "command": "pause",
+      "target": "500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00baeb3a-69d8-47c8-90e4-266213838aee",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//div[@id='blind' and @style='display: none;']",
+      "targets": [],
+      "value": "is_loading"
+    }, {
+      "id": "05d02647-9b81-400e-b13f-a78ae09b92e0",
+      "comment": "",
+      "command": "repeatIf",
+      "target": "${is_loading}==0",
+      "targets": [],
+      "value": "100"
+    }]
+  }, {
+    "id": "a408e63c-e720-4098-8d38-c4647a6718c3",
+    "name": "02_PRODUCT_ANALYZER_TEXT",
+    "commands": [{
+      "id": "11491510-8b22-4a91-99d1-20dd7cad8b33",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba629259-3f0d-415e-8410-12d4760e8abf",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee9ad925-ffe5-4cc2-8ba9-dbc5c07841c1",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1046ba6-ff3e-4771-96e6-1b376071dbfb",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b263b8c-95d8-434a-9ecb-ee86e7fb0cb0",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["css=#list-item-137 .v-list-item__title", "css:finder"],
+        ["xpath=//div[@id='list-item-137']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "67f2f99b-e916-49aa-84fa-3981c5f76ba5",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f1422d2-0119-4730-8433-0d1e0d95b5d4",
+      "comment": "IRIS Analyzer 문구 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h3[contains(.,'IRIS Analyzer')]",
+      "targets": [
+        ["css=.white--text:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/div/div/div/div/div[3]/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'IRIS Analyzer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78a13a1e-1628-4b0a-9062-b46553ac8024",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b625fcee-8174-43fe-b682-af90208bd187",
+      "comment": "분석 프로세스 문구 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//div[2]/div/div/div/div/div/div",
+      "targets": [
+        ["css=.text-center > .display-1", "css:finder"],
+        ["xpath=//div[@id='app']/div/div/div/div[2]/div/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50b3647c-66f4-4ab5-be23-b166d6071c83",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f9023cd-588b-4ce6-9132-694d760b0d05",
+      "comment": "스토리지 문구 확인",
+      "command": "//verifyElementPresent",
+      "target": "xpath=//h3[contains(.,'표준 인터페이스로 다양한 스토리지의 데이터 분석')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0e307183-7d02-4a23-bf21-cb6abd3b233b",
+    "name": "03_PRODUCT_ANALYZER_RESOURCE_TUTORIAL",
+    "commands": [{
+      "id": "44220a34-4d73-418c-a885-f7ed65c77477",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "780b43ad-43f7-4d76-8740-f1c81e1187ec",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11a809d0-618b-4dd0-ac52-41942c03e35a",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "101e46d8-b7fb-4f31-865d-fe38e12bf1c2",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14414377-fbf7-4523-a2bb-1486798e0aee",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["css=#list-item-102 .v-list-item__title", "css:finder"],
+        ["xpath=//div[@id='list-item-102']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[3]/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "506ee89c-996a-4d09-bd32-e378b6040f4f",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c05cc172-0e7b-4a2b-8983-d39767eb03bf",
+      "comment": "튜토리얼 클릭",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(1) .analyzer-recources__button",
+      "targets": [
+        ["css=.col-md-4:nth-child(1) .analyzer-recources__button", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div[5]/div/div/div[2]/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b185a122-9712-431e-9ef8-e137e469ba74",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e4b325a-406b-4eb5-b5e0-cf4e5aaafa02",
+      "comment": "튜토리얼 페이지 문구 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Tutorial')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'튜토리얼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8439a1b-f6bc-4514-9b09-9ebbcec40698",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "df0f5f1d-d29b-4837-b799-975f6e42deb2",
+    "name": "04_PRODUCT_ANALYZER_RESOURCE_MANUAL",
+    "commands": [{
+      "id": "c6639f5d-39eb-44b9-89fe-06d033e1fcef",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8f9155da-a1f8-4abe-a197-509fc89df33d",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d94192ea-1954-476d-9678-a2ee8479b977",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "13f1428b-f196-40e7-8a1a-95f2bbd2d4d9",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f1c6ee44-70b1-4d7a-8c04-75c058ccfc96",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91de4360-18b8-4b8b-8137-14c020b26add",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a808f862-e054-40ca-b219-ee5920ab317b",
+      "comment": "매뉴얼 클릭",
+      "command": "click",
+      "target": "css=.col-md-4:nth-child(2) .analyzer-recources__button",
+      "targets": [
+        ["css=.col-md-4:nth-child(2) .analyzer-recources__button", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div[5]/div/div/div[2]/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "689b13c5-cba3-490b-aae0-8f052c6ec682",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bbca9569-f88c-408c-a6b6-9cba24b46995",
+      "comment": "매뉴얼 페이지 문구 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Manual')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'매뉴얼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88d5a1e6-c961-4ee6-9d25-26f98796bf80",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3653a697-db40-44be-ab9a-82647146c5b2",
+    "name": "05_PRODUCT_ANALYZER_RESOURCE_USECASE",
+    "commands": [{
+      "id": "5683a611-7976-4b2d-b2c7-b4b9a882db32",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd9d98d2-9e4b-4900-8c54-0e55481d43f2",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02b675bf-3885-4191-a6d3-62644c4b5b6e",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbdbd03d-fe3c-41ef-83eb-9d22f2ab99c6",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c02ae387-03b1-4788-a55b-380a125b9266",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c0614c6-5cff-45c4-ac57-87d74c73442c",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59a178de-4919-452f-b9a7-7b652f74303d",
+      "comment": "Use Case 존재유무 확인",
+      "command": "verifyElementPresent",
+      "target": "css=.col-md-4:nth-child(3) .analyzer-recources__button",
+      "targets": [
+        ["css=.col-md-4:nth-child(3) .analyzer-recources__button", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div[5]/div/div/div[2]/div/div[3]/div/a", "xpath:idRelative"],
+        ["xpath=//div[3]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fa58306-01b9-4bc1-b487-25d1ea894a51",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "5b12b4b5-5914-4921-a8b1-833578ca2f0f",
+    "name": "06_PRODUCT_ANALYZER_FOOTER_STUDIO",
+    "commands": [{
+      "id": "41f66503-ea55-4272-b69f-d92bb489b964",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9295941d-aa48-4311-8963-6a1d8330a0d2",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b09b344-36f3-499a-b9df-2fe68d140d3f",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "061156a3-fe4d-41d4-b6dc-a0b0d017ec00",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0973742d-8c7f-4ba9-b722-487b4e8ec454",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58608770-46dd-405f-a37b-b97b2ea9ea9a",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc6959c0-257e-4b77-b03d-27ece1879ff1",
+      "comment": "footer -> IRIS Studio 클릭",
+      "command": "click",
+      "target": "css=.py-0:nth-child(1) > .mb-6 > div:nth-child(2) .v-btn__content",
+      "targets": [
+        ["css=.py-0:nth-child(1) > .mb-6 > div:nth-child(2) .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/div/div/div/div/div/div[2]/div/div/div/div[2]/button/span", "xpath:idRelative"],
+        ["xpath=//div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'IRIS Studio')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47f0105c-ccd2-445e-b218-9483d927ca86",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "afbb5209-162d-4a2e-a00e-8df6fbe5e959",
+      "comment": "IRIS Studio 화면 이동 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h3[contains(.,'IRIS Studio')]",
+      "targets": [
+        ["css=.mt-12 > .display-1", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div[2]/div/div/div[3]/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'IRIS Studio')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ad8f8f7-506a-4005-904a-4f1c1058a1c2",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4d9a2bba-766f-4586-9840-80230f45add7",
+    "name": "07_PRODUCT_ANALYZER_FOOTER_MANUAL",
+    "commands": [{
+      "id": "7b8bbd3f-5245-4b9f-8b0d-f1a6e077dbb1",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8cbdc3b3-b334-4dd0-b467-5401ead56461",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc823c87-42c2-4f28-b7af-53dedfdb52fd",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95172531-60a4-409e-8351-614c63341783",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "168ec11f-dd92-4d60-aad4-7c7f5ea8cc1c",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e42b47b-1cac-4cd6-ba0f-6e93f3689bc3",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca23df17-54f5-4105-9081-bcb7d8a26121",
+      "comment": "footer -> 매뉴얼 클릭",
+      "command": "click",
+      "target": "css=.py-0:nth-child(2) > .mb-6 > div:nth-child(1) .v-btn__content",
+      "targets": [
+        ["css=.py-0:nth-child(2) > .mb-6 > div:nth-child(1) .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/div/div/div/div/div/div[2]/div/div[2]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'매뉴얼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f53a6975-143b-43eb-8021-8ac8514d960f",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ebccb58-6215-4fb0-beea-9edb9738d3cb",
+      "comment": "매뉴얼 화면 이동 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Manual')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'매뉴얼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7794185b-2ca5-4dec-b45c-6c8ac5fbc7ba",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f63460cf-73e7-44b5-bfa8-4e695eb76b83",
+    "name": "08_PRODUCT_ANALYZER_FOOTER_TUTORIAL",
+    "commands": [{
+      "id": "e9b05e5c-4013-4d5e-9b1d-7598115d4530",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f31cc110-0073-4cab-b3e9-a61f5548e455",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2baa940-f147-4ec2-981c-af6026634d97",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cc8367b-fe27-41fc-a8b2-5650b224fdef",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea8daa52-ca6f-4bc7-9e5d-7768ac39a6b9",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ccd390c-16f9-4659-9970-158467d2c6e5",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5bd6e40-4008-4930-a60b-1e9a58d3071c",
+      "comment": "footer ->튜토리얼 클릭",
+      "command": "click",
+      "target": "css=.py-0:nth-child(2) > .mb-6 > div:nth-child(2) .v-btn__content",
+      "targets": [
+        ["css=.py-0:nth-child(2) > .mb-6 > div:nth-child(2) .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/button/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'튜토리얼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c64664b-6d5c-48c3-842b-f73e72d602e2",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd23cf7b-1d0c-4956-94a7-63f445539640",
+      "comment": "튜토리얼 화면 이동 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Tutorial')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'튜토리얼')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b97570da-722c-4c1b-b6ce-36f6c03a3fa4",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "57e103d9-ebcb-4cbe-aa1a-a68df7dfaa86",
+    "name": "09_PRODUCT_ANALYZER_FOOTER_BLOG",
+    "commands": [{
+      "id": "f8b17f78-e6c8-42f0-8b11-9e4c6ce7f5f9",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e760234f-e05f-4a19-bd04-2927373b603a",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3185f205-6000-4a73-a7ee-7dd0dc346cca",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54447fbd-d641-4c2c-a92c-f1d423a111c0",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e6a0a69-fe14-4316-a7bc-4d7b66593cce",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "76340ad0-556c-4bcc-bdc4-072be605dc6b",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42793c6b-92ec-4b72-90cf-67d807fadc5f",
+      "comment": "footer -> 블로그 클릭",
+      "command": "click",
+      "target": "css=.py-0:nth-child(3) .v-btn__content",
+      "targets": [
+        ["css=.py-0:nth-child(3) .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/div/div/div/div/div/div[2]/div/div[3]/button/span", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div/div/div[2]/div/div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c968d3e3-9de9-44dd-8ad0-fb20817f395c",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f40e461-7abc-4109-bd9a-8bb1a89a198c",
+      "comment": "블로그 화면 이동 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Blog')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'블로그')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f05ab343-0cb5-4c20-9131-357c8cf8b323",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d563bf75-52e3-4aba-bb59-5fd6b38f9d6f",
+    "name": "10_PRODUCT_ANALYZER_FOOTER_GALARY",
+    "commands": [{
+      "id": "25a67978-52cd-4631-8444-ff47cb965eb0",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a826210-805d-44b0-a76d-65f3b4805d48",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "884d22e4-e51a-4353-a591-4f5b35c3a657",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca6c4e41-cf8b-4027-b94e-c776c809bcf6",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5472459-529a-498e-8efa-4b1a862c0a74",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f69f3d01-fdee-456b-b188-10bef94f834d",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "504fecd8-5dfb-4c6b-89eb-54e94a6ca89c",
+      "comment": "footer -> 갤러리 클릭",
+      "command": "click",
+      "target": "css=.py-0:nth-child(4) > .footer-sitemap__menu-item > .v-btn__content",
+      "targets": [
+        ["css=.py-0:nth-child(4) > .footer-sitemap__menu-item > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/div/div/div/div/div/div[2]/div/div[4]/button/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[4]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b8b330f-7a10-4a76-a3ec-8d4eb90a1e72",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2bdd07eb-cc92-4ae6-a13d-efce580d1d7e",
+      "comment": "갤러리 화면 이동 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Gallery')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'갤러리')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb2cf6e8-00cd-4b59-abcf-699661b7da31",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d065070b-7bd4-4aed-b82c-9a71d936fe5a",
+    "name": "11_PRODUCT_ANALYZER_FOOTER_COMPANY",
+    "commands": [{
+      "id": "6b9df566-d610-4125-b5ea-af67d29e540d",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ee8d190-6bd2-40a7-abe1-093e96e93105",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2538bc3-368c-4c8f-a36c-71e0cea1a8a5",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "614d57e7-f43a-42fe-9003-994f6cdc86ba",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "206be209-e4b2-4e19-982a-2387cf562a3b",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86a40ece-36b5-4776-bd19-979d2d11bede",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf6bf7a3-d215-4989-bbd1-29aa15082ba7",
+      "comment": "footer -> Company 클릭",
+      "command": "click",
+      "target": "css=.py-0:nth-child(5) > .footer-sitemap__menu-item > .v-btn__content",
+      "targets": [
+        ["css=.py-0:nth-child(5) > .footer-sitemap__menu-item > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/div/div/div/div/div/div[2]/div/div[5]/button/span", "xpath:idRelative"],
+        ["xpath=//div[5]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f7e3a75-c9f1-4972-93c5-857b19da7194",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "21823e14-7f48-4b13-a99f-1772c23be2a6",
+      "comment": "컴퍼니 화면 이동 확인",
+      "command": "//verifyElementPresent",
+      "target": "xpath=//p[contains(.,'IRIS')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3fddee6-a4e0-4e93-97b0-51ca38cb1073",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3cad0b1d-b5c7-4edd-92af-939c545ab5de",
+    "name": "12_PRODUCT_ANALYZER_FOOTER_TERMS1",
+    "commands": [{
+      "id": "7c07a71d-3fc2-4b2c-9ce0-3948076044e3",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a78f62cb-9da6-4282-bf87-723bc5f14935",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15455489-ac67-4119-99f4-2fe22319b73a",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "91e7b272-23ec-4339-a8c6-d5c40a01a851",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9db74ff6-0151-46af-85b2-f416e950729c",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29b4aed5-7698-4da6-b86d-d971f45d2468",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "69d3e709-ff84-48c0-988f-618cb877d2b6",
+      "comment": "footer -> 개인정보 취급방침 클릭",
+      "command": "click",
+      "target": "css=.footer__privacy-polish > .v-btn__content",
+      "targets": [
+        ["css=.footer__privacy-polish > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/footer/div/div/div[2]/button/span", "xpath:idRelative"],
+        ["xpath=//footer/div/div/div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'개인정보 취급방침')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "443e6432-d7d7-468a-a810-fb2a244285ee",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1bda1a52-4205-4967-b915-1a8fb92f0461",
+      "comment": "개인정보 취급방침 및 이용약관 화면 이동 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Privacy and')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'개인정보 취급방침 및 이용약관')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "422e24ad-5385-43d2-8111-ab4beeabae77",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e82734e6-6cde-4e19-a85c-4ced4a47879c",
+    "name": "13_PRODUCT_ANALYZER_FOOTER_TERMS2",
+    "commands": [{
+      "id": "7e57373e-030e-4fed-bdfe-383c31fd9665",
+      "comment": "웹 접속",
+      "command": "run",
+      "target": "99_LOGIN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "646f62d0-7cb9-440f-bba1-4cdd75b5fdb7",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "317e5e05-56c2-46f3-b425-7c42202221de",
+      "comment": "제품 클릭",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Product')]",
+      "targets": [
+        ["css=.gnb-menu__item:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/header/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'제품')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e85d6193-9857-4833-9542-2acd24973123",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48405fd3-a9e4-428b-a02f-0f55d229ebb7",
+      "comment": "IRIS Analyzer 클릭",
+      "command": "click",
+      "target": "xpath=//div[@test_id='gnb-0-0']",
+      "targets": [
+        ["id=list-item-94", "id"],
+        ["css=#list-item-94", "css:finder"],
+        ["xpath=//div[@id='list-item-94']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//body/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3d747dd-b0d0-4464-9fea-785a2f8ad800",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a30d0be7-2408-4da9-9b60-3161ecc26f20",
+      "comment": "footer -> 이용약관 클릭",
+      "command": "click",
+      "target": "css=.footer__use-terms > .v-btn__content",
+      "targets": [
+        ["css=.footer__use-terms > .v-btn__content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[5]/footer/div/div/div[2]/button[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8faff8f-b972-4d65-b12e-bba83c468359",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16b5d492-54f5-4de0-9b47-f1e0bdc6ef52",
+      "comment": "개인정보 취급방침 및 이용약관 화면 이동 확인",
+      "command": "verifyElementPresent",
+      "target": "xpath=//h2[contains(.,'Terms & ')]",
+      "targets": [
+        ["css=.content-header__text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div/div/div[3]/div/div/div/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'개인정보 취급방침 및 이용약관')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce1cb9b8-bb32-466c-9217-13766c9281f7",
+      "comment": "대기",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "e342fdf2-42c7-4d31-aebd-810103e73788",
+    "name": "PRODUCT_ANALYZER_ENG",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e2427760-5306-4036-9983-c45ef6f87db5", "a408e63c-e720-4098-8d38-c4647a6718c3", "0e307183-7d02-4a23-bf21-cb6abd3b233b", "df0f5f1d-d29b-4837-b799-975f6e42deb2", "3653a697-db40-44be-ab9a-82647146c5b2", "5b12b4b5-5914-4921-a8b1-833578ca2f0f", "4d9a2bba-766f-4586-9840-80230f45add7", "f63460cf-73e7-44b5-bfa8-4e695eb76b83", "57e103d9-ebcb-4cbe-aa1a-a68df7dfaa86", "d563bf75-52e3-4aba-bb59-5fd6b38f9d6f", "d065070b-7bd4-4aed-b82c-9a71d936fe5a", "3cad0b1d-b5c7-4edd-92af-939c545ab5de", "e82734e6-6cde-4e19-a85c-4ced4a47879c", "a7ee7bc9-925c-4b78-bb1b-3582375f3d31"]
+  }],
+  "urls": ["http://192.168.100.180/#/login", "http://192.168.100.180/#/", "http://192.168.102.142:31948/", "http://192.168.102.136/main/main-landing"],
+  "plugins": []
+}

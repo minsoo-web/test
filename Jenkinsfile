@@ -33,8 +33,9 @@ pipeline {
                 dockerfile true
             }
             steps {
-                sh "pwd"
-                sh "ls"
+                sh"""
+                ./qa-script/run-e2e-headless-side.sh
+                """
             }    
         }
     }
