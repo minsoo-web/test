@@ -29,12 +29,9 @@ pipeline {
             }
         }
         stage('PARAMS-E2E-TEST') {
-            agent {
-                dockerfile true
-            }
             steps {
                 sh"""
-                ./qa-script/run-e2e-headless-side.sh
+                docker exec -t iris-e2e-saas qa-script/run-e2e-headless-side.sh;
                 """
             }    
         }
