@@ -9,19 +9,12 @@ pipeline {
     //     // 10분마다 8~18시까지 월~목 동안
     //     cron('*/10 8-18 * * 1-5')
     // }
-
-    // parameters {
-    //     string(name:'AUTO', defaultValue:'AUTO', description:'Decide whether this is AutoBuild or not.')
-    // }
     
     stages {
         stage('AUTO BUILD') {
             // when {
-            //     expression { return params.AUTO == 'AUTO' }
+            //     triggeredBy "TimerTrigger"
             // }
-            when {
-                triggeredBy "TimerTrigger"
-            }
             steps {
                 build(
                     job: 'minsoo-test',
@@ -41,10 +34,7 @@ pipeline {
             }
             steps {
                 sh "pwd"
-                sh """
-                git clone https://github.com/Minsoo-web/NEW-IRIS-E2E.git
-                """
-                echo 'it is build by PARMS-E2E 😃'
+                sh "ls"
             }    
         }
     }
