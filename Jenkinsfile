@@ -1,4 +1,4 @@
-def MASTER_BUILD_NUMBER = Jenkins.instance.getItem('minsoo-test').lastSuccessfulBuild.number
+// def MASTER_BUILD_NUMBER = Jenkins.instance.getItem('minsoo-test').lastSuccessfulBuild.number
 
 pipeline {
     agent any
@@ -33,7 +33,8 @@ pipeline {
         stage('PARAMS-E2E-TEST') {
             steps {
                 sh"""
-                docker exec -t new-iris-e2e-saas-${MASTER_BUILD_NUMBER} qa-script/run-e2e-headless-side.sh;
+                # docker exec -t new-iris-e2e-saas-${MASTER_BUILD_NUMBER} qa-script/run-e2e-headless-side.sh
+                docker exec -t new-iris-e2e-saas-81 qa-script/run-e2e-headless-side.sh
                 """
             }    
         }
