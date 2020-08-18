@@ -10,6 +10,11 @@ ENV PATH $PYTHONPATH:$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV TZ Asia/Seoul
 
+WORKDIR $HOME/IRIS-E2E-SAAS/
+
+COPY . $HOME/IRIS-E2E-SAAS/
+
+
 RUN apt -y update && \
     apt -y upgrade
 RUN xargs apt -y --no-install-recommends install < requirements.sys
@@ -22,9 +27,6 @@ RUN pyenv install 3.7.0
 RUN pyenv global 3.7.0
 
 RUN pip install -r requirements.txt
-
-COPY . $HOME/IRIS-E2E-SAAS/
-WORKDIR $HOME/IRIS-E2E-SAAS/
 
 RUN apt-get update
 RUN dpkg -i chrome.deb || apt-get install -yf
