@@ -25,6 +25,7 @@ pipeline {
                         string(name: 'ID', value: 'root'), 
                         string(name: 'build_target', value: 'SAMPLE-E2E'),
                         string(name: 'menu_target', value: 'ALL'),
+                        string(name: 'container_number', value: "$BUILD_NUMBER")
                     ]
                 )
                 echo "it is auto build 😃"
