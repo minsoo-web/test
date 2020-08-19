@@ -22,7 +22,6 @@ pipeline {
                     job: 'minsoo-test',
                     wait: true,
                     parameters: [
-                        string(name: 'ID', value: 'root'), 
                         string(name: 'build_target', value: 'IRIS-E2E-SAAS'),
                         string(name: 'menu_target', value: 'All'),
                         string(name: 'user', value: 'All'),
