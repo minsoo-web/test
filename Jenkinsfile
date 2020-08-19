@@ -23,8 +23,9 @@ pipeline {
                     wait: true,
                     parameters: [
                         string(name: 'ID', value: 'root'), 
-                        string(name: 'build_target', value: 'SAMPLE-E2E'),
-                        string(name: 'menu_target', value: 'ALL'),
+                        string(name: 'build_target', value: 'IRIS-E2E-SAAS'),
+                        string(name: 'menu_target', value: 'All'),
+                        string(name: 'user', value: 'All'),
                         string(name: 'container_number', value: "$BUILD_NUMBER")
                     ]
                 )
@@ -34,8 +35,7 @@ pipeline {
         stage('PARAMS-E2E-TEST') {
             steps {
                 sh"""
-                # docker exec -t new-iris-e2e-saas-${MASTER_BUILD_NUMBER} qa-script/run-e2e-headless-side.sh
-                docker exec -t new-iris-e2e-saas-81 qa-script/run-e2e-headless-side.sh
+                docker exec -t -w /root/IRIS-E2E-SAAS new-iris-e2e-${BUILD_NUMBER} qa-script/run-e2e-headless-side.sh
                 """
             }    
         }
