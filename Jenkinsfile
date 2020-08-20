@@ -7,17 +7,20 @@ pipeline {
         ansiColor('xterm')
     }
 
-    // triggers {
-    //     // 10분마다 8~18시까지 월~목 동안
-    //     cron('*/10 8-18 * * 1-5')
-    // }
+    triggers {
+        cron '''
+        TZ=Asia/Seoul
+        H 13 * * *
+        '''
+    }
     
     stages {
         stage('AUTO BUILD') {
-            // when {
-            //     triggeredBy "TimerTrigger"
-            // }
+            when {
+                triggeredBy "TimerTrigger"
+            }
             steps {
+                echo "it is auto build ⏰"
                 build(
                     job: 'minsoo-test',
                     wait: true,
@@ -28,14 +31,34 @@ pipeline {
                         string(name: 'container_number', value: "$BUILD_NUMBER")
                     ]
                 )
-                echo "it is auto build 😃"
             }
         }
+        stage('DELETE CONTAINER') {
+            steps {
+                echo "✍️ CHECK CONTAINER EXIST"
+
+                sh"""
+                # 이전 빌드에 사용되었던 컨테이너를 삭제해준다.
+                last_build_number=`expr $BUILD_NUMBER - 1`
+                last_container_name=new-iris-e2e-$last_build_number
+
+                if test ! -z "$(docker ps -af name=$last_container_name | grep -w $last_container_name$)"; then
+                    echo "DELETE LAST BUILD CONTAINER"
+                    docker rm -f $last_container_name
+                fi
+                """
+                echo "END STAGE"
+            }    
+        }
+
         stage('PARAMS-E2E-TEST') {
             steps {
+                echo "🔥 RUN PARAMETER E2E TEST"
                 sh"""
+                # 테스트 진행
                 docker exec -t -w /root/IRIS-E2E-SAAS new-iris-e2e-${BUILD_NUMBER} qa-script/run-e2e-headless-side.sh
                 """
+                echo "END STAGE"
             }    
         }
     }
