@@ -7,18 +7,18 @@ pipeline {
         ansiColor('xterm')
     }
 
-    triggers {
-        cron '''
-        TZ=Asia/Seoul
-        H 13 * * *
-        '''
-    }
+    // triggers {
+    //     cron '''
+    //     TZ=Asia/Seoul
+    //     H 13 * * *
+    //     '''
+    // }
     
     stages {
         stage('AUTO BUILD') {
-            when {
-                triggeredBy "TimerTrigger"
-            }
+            // when {
+            //     triggeredBy "TimerTrigger"
+            // }
             steps {
                 echo "it is auto build ⏰"
                 build(
