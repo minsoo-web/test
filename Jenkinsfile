@@ -1,6 +1,3 @@
-// def INT_BUILD_NUMBER = BUILD_NUMBER as Integer
-// def LAST_BUILD_NUMBER = INT_BUILD_NUMBER - 1
-
 pipeline {
     agent any
     
