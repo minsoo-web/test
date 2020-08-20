@@ -4,15 +4,7 @@ pipeline {
     options {
         ansiColor('xterm')
     }
-
-    triggers {
-        cron '''
-        TZ=Asia/Seoul
-        H 16 * * *
-        '''
-    }
-
-    
+        
     stages {
 
         // stage('DELETE CONTAINER') {
