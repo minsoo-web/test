@@ -1,4 +1,4 @@
-// def MASTER_BUILD_NUMBER = Jenkins.instance.getItem('minsoo-test').lastSuccessfulBuild.number
+def LAST_BUILD_NUMBER = BUILD_NUMBER - 1
 
 pipeline {
     agent any
@@ -14,9 +14,6 @@ pipeline {
     //     '''
     // }
 
-    environment {
-        LAST_BUILD_NUMBER = ${BUILD_NUMBER} - 1
-    }
     
     stages {
         stage('AUTO BUILD') {
