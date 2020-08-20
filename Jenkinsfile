@@ -13,6 +13,10 @@ pipeline {
     //     H 13 * * *
     //     '''
     // }
+
+    environment {
+        LAST_BUILD_NUMBER = ${BUILD_NUMBER} - 1
+    }
     
     stages {
         stage('AUTO BUILD') {
@@ -36,18 +40,15 @@ pipeline {
         stage('DELETE CONTAINER') {
             steps {
                 echo "✍️ CHECK CONTAINER EXIST"
-
-                sh"""
-                # 이전 빌드에 사용되었던 컨테이너를 삭제해준다.
-                last_build_number=`expr $BUILD_NUMBER - 1`
-                last_container_name=new-iris-e2e-$last_build_number
-
-                if test ! -z "$(docker ps -af name=${last_container_name} | grep -w ${last_container_name})"; then
+                script{
+                    // 이전 빌드에 사용되었던 컨테이너를 삭제해준다.
                     echo "DELETE LAST BUILD CONTAINER"
-                    docker rm -f $last_container_name
-                fi
-                """
-                echo "END STAGE"
+                    def statuscode = sh script: "docker rm -f new-iris-e2e-$LAST_BUILD_NUMBER", returnStatus: true
+                    if (statuscode != 1 && statuscode != 0){
+                        error "SOMETHING WRONG"
+                    }
+                    echo "END STAGE"
+                }                
             }    
         }
 
