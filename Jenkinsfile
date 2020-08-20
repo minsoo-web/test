@@ -17,6 +17,22 @@ pipeline {
 
     
     stages {
+        
+        stage('DELETE CONTAINER') {
+            steps {
+                echo "✍️ CHECK CONTAINER EXIST"
+                script{
+                    // 이전 빌드에 사용되었던 컨테이너를 삭제해준다.
+                    echo "DELETE LAST BUILD CONTAINER"
+                    def statuscode = sh script: "docker rm -f new-iris-e2e-$LAST_BUILD_NUMBER", returnStatus: true
+                    if (statuscode != 1 && statuscode != 0){
+                        error "SOMETHING WRONG"
+                    }
+                    echo "END STAGE"
+                }                
+            }    
+        }
+
         stage('AUTO BUILD') {
             // when {
             //     triggeredBy "TimerTrigger"
@@ -34,20 +50,6 @@ pipeline {
                     ]
                 )
             }
-        }
-        stage('DELETE CONTAINER') {
-            steps {
-                echo "✍️ CHECK CONTAINER EXIST"
-                script{
-                    // 이전 빌드에 사용되었던 컨테이너를 삭제해준다.
-                    echo "DELETE LAST BUILD CONTAINER"
-                    def statuscode = sh script: "docker rm -f new-iris-e2e-$LAST_BUILD_NUMBER", returnStatus: true
-                    if (statuscode != 1 && statuscode != 0){
-                        error "SOMETHING WRONG"
-                    }
-                    echo "END STAGE"
-                }                
-            }    
         }
 
         stage('PARAMS-E2E-TEST') {
