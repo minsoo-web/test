@@ -24,7 +24,7 @@ pipeline {
                     parameters: [
                         string(name: 'build_target', value: 'IRIS-E2E-SAAS'),
                         string(name: 'menu_target', value: 'All'),
-                        string(name: 'user', value: 'All'),
+                        string(name: 'user', value: 'admin'),
                         string(name: 'container_number', value: "$BUILD_NUMBER")
                     ]
                 )
