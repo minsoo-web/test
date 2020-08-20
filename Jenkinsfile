@@ -17,9 +17,9 @@ pipeline {
     
     stages {
         stage('AUTO BUILD') {
-            // when {
-            //     triggeredBy "TimerTrigger"
-            // }
+            when {
+                triggeredBy "TimerTrigger"
+            }
             steps {
                 echo "it is auto build ⏰"
                 build(
