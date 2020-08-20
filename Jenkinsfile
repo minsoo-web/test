@@ -8,12 +8,12 @@ pipeline {
         ansiColor('xterm')
     }
 
-    // triggers {
-    //     cron '''
-    //     TZ=Asia/Seoul
-    //     H 13 * * *
-    //     '''
-    // }
+    triggers {
+        cron '''
+        TZ=Asia/Seoul
+        H 16 * * *
+        '''
+    }
 
     
     stages {
