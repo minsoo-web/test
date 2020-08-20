@@ -42,7 +42,7 @@ pipeline {
                 last_build_number=`expr $BUILD_NUMBER - 1`
                 last_container_name=new-iris-e2e-$last_build_number
 
-                if test ! -z "$(docker ps -af name=$last_container_name | grep -w $last_container_name$)"; then
+                if test ! -z "$(docker ps -af name=${last_container_name} | grep -w ${last_container_name})"; then
                     echo "DELETE LAST BUILD CONTAINER"
                     docker rm -f $last_container_name
                 fi
