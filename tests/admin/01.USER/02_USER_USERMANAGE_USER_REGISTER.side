@@ -1,0 +1,1270 @@
+{
+	"id": "8da82329-42cf-4f13-a564-e99798be90b6",
+	"version": "2.0",
+	"name": "USER_USERMANAGE_USER_REGIST",
+	"url": "http://192.168.102.114:30006/admin",
+	"tests": [
+		{
+			"id": "a7ee7bc9-925c-4b78-bb1b-3582375f3d31",
+			"name": "99_LOGIN",
+			"commands": [
+				{
+					"id": "4d7d4baf-e079-4717-ba3c-0b5a9a84babc",
+					"comment": "창열기",
+					"command": "open",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "ae84ba76-a9b4-4b99-b6a6-632566f64e00",
+					"comment": "",
+					"command": "setWindowSize",
+					"target": "1600x800",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "442bd792-a85a-477f-997f-0d0c791dff91",
+					"comment": "[로그인 되어있을 경우] 로딩 대기",
+					"command": "run",
+					"target": "98_LOADING_AWAITER",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "4ec74982-9f9d-4375-a681-b37710e47fd8",
+					"comment": "",
+					"command": "storeXpathCount",
+					"target": "xpath=//button[contains(.,'모비젠')]",
+					"targets": [],
+					"value": "Login"
+				},
+				{
+					"id": "204c2542-59b6-4f92-8e26-96cf68d72293",
+					"comment": "",
+					"command": "if",
+					"target": "${Login} > 0",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "dfb976e3-d8b0-4f65-a0ce-e2fa64f5877d",
+					"comment": "",
+					"command": "click",
+					"target": "xpath=//button[contains(.,'모비젠')]",
+					"targets": [
+						[
+							"css=.gnb-user-dropdown__button",
+							"css:finder"
+						],
+						[
+							"xpath=(//button[@type='button'])[4]",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div/header/div/div/div[3]/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[3]/button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'모비젠')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "ce7c0336-7def-45dd-889c-35009c202457",
+					"comment": "",
+					"command": "click",
+					"target": "id=list-item-125",
+					"targets": [
+						[
+							"id=list-item-125",
+							"id"
+						],
+						[
+							"css=#list-item-125",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='list-item-125']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[5]/div/div[2]/div/div",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "f76f227f-5a38-45d0-a7ca-8fdf6471485c",
+					"comment": "",
+					"command": "waitForElementVisible",
+					"target": "xpath=//button[contains(.,'로그인')]",
+					"targets": [
+						[
+							"css=.primary",
+							"css:finder"
+						],
+						[
+							"xpath=//button[@type='submit']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div[2]/div/div/div/span/form/div/div/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'로그인')]",
+							"xpath:innerText"
+						]
+					],
+					"value": "30000"
+				},
+				{
+					"id": "74315e0e-18aa-4d7e-9498-a1c50beabff0",
+					"comment": "",
+					"command": "end",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "fd058b1f-b987-42e6-b1b9-685cdcd4e458",
+					"comment": "id 입력",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"아이디\"]",
+					"targets": [
+						[
+							"css=.v-input--is-focused .v-text-field__slot",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div[2]/div/div/div/span/form/span/div/div/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span/div/div/div/div",
+							"xpath:position"
+						]
+					],
+					"value": "admin"
+				},
+				{
+					"id": "e1134a87-75ed-4c0f-878f-9a549ef81da1",
+					"comment": "대기",
+					"command": "pause",
+					"target": "100",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "84983e2a-143e-457d-aaba-576ff1ed8c4e",
+					"comment": "pw 입력",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"비밀번호\"]",
+					"targets": [
+						[
+							"css=.v-input--is-focused .v-text-field__slot",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div[2]/div/div/div/span/form/span[2]/div/div/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[2]/div/div/div/div",
+							"xpath:position"
+						]
+					],
+					"value": "mobigen9360$$"
+				},
+				{
+					"id": "b5327a97-60b7-4fdf-8292-3cd34dd7df15",
+					"comment": "대기",
+					"command": "pause",
+					"target": "100",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "fea0f686-ff3c-487a-87b1-9271dc635951",
+					"comment": "로그인 클릭",
+					"command": "click",
+					"target": "xpath=//button[contains(.,'로그인')]",
+					"targets": [
+						[
+							"css=.row:nth-child(4) .login__submit-button",
+							"css:finder"
+						],
+						[
+							"xpath=//button[@type='submit']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div/div[2]/div[2]/div/div/span/form/div[2]/div/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'Login')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "24e5d1cb-1d5b-4cf1-b7cc-ed7135ad2859",
+					"comment": "로그인 후 창 뜰때까지 대기",
+					"command": "run",
+					"target": "98_LOADING_AWAITER",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "cb7f5da7-e339-4c2f-9654-e3f50cf057f2",
+					"comment": "유저 정보 확인",
+					"command": "assertText",
+					"target": "xpath=//span[contains(.,'모비젠')]",
+					"targets": [],
+					"value": "모비젠"
+				},
+				{
+					"id": "ee9b40ce-2772-4840-8c8a-a424cf6a085d",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "28b60202-99de-41ca-8773-e69ec94424b9",
+					"comment": "회원등록 클릭",
+					"command": "click",
+					"target": "css=.row:nth-child(2) .v-btn",
+					"targets": [
+						[
+							"css=.row:nth-child(2) .v-btn",
+							"css:finder"
+						],
+						[
+							"xpath=(//button[@type='button'])[7]",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div/div[2]/div[2]/div[2]/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'회원등록')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "f0891e44-e611-4cb8-ad25-aeecd855b427",
+					"comment": "회원등록 팝업 뜨는 것 대기",
+					"command": "waitForElementPresent",
+					"target": "xpath=//div[@role=\"document\"]",
+					"targets": [],
+					"value": "30000"
+				},
+				{
+					"id": "04ca4ae7-c50c-4504-9427-e8884a4c627f",
+					"comment": "회원등록 팝업 내용 대기",
+					"command": "waitForElementVisible",
+					"target": "css=.align-center .display-1",
+					"targets": [],
+					"value": "30000"
+				}
+			]
+		},
+		{
+			"id": "4713201f-7458-4ca4-9b74-df645860adaa",
+			"name": "98_LOADING_AWAITER",
+			"commands": [
+				{
+					"id": "3de3a2b1-f17a-453d-94af-f2d69e0492be",
+					"comment": "",
+					"command": "waitForElementPresent",
+					"target": "xpath=//div[@style=\"z-index: 300; display: none;\"]",
+					"targets": [],
+					"value": "30000"
+				}
+			]
+		},
+		{
+			"id": "7bb7880f-6a70-4888-beb1-c789e26018af",
+			"name": "01_USER_USERMANAGE_USER_REGIST_EMPTY_ID",
+			"commands": [
+				{
+					"id": "d8c9dbec-8822-4329-ac2d-3b4d78dbccc8",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "d6d63d9a-d85d-403c-ba2c-50095d759572",
+					"comment": "아이디 클릭",
+					"command": "click",
+					"target": "xpath=//input[@placeholder='이메일(아이디)']",
+					"targets": [
+						[
+							"id=input-1235",
+							"id"
+						],
+						[
+							"css=#input-1235",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1235']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[3]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "8c47921f-2a89-4398-b53e-74bbf86b66c6",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "87f21571-3ef7-4d89-9b00-4cebce4aac6c",
+					"comment": "'아이디는 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "아이디는 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "5c84c7cc-9491-4c67-a9db-206334531a0a",
+			"name": "02_USER_USERMANAGE_USER_REGIST_EMPTY_NAME",
+			"commands": [
+				{
+					"id": "1b337d81-b61e-49bf-976b-f3c7d30781f8",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "dd2cc6b9-18e9-482a-8875-da675ecbce51",
+					"comment": "이름 클릭",
+					"command": "click",
+					"target": "xpath=//input[@placeholder='이름']",
+					"targets": [
+						[
+							"id=input-1235",
+							"id"
+						],
+						[
+							"css=#input-1235",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1235']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[3]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "9ad93e15-e0d9-42ea-a025-4378d0262835",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "680f34de-2c3c-4e0a-8efd-945c300a0c1c",
+					"comment": "'이름은 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "이름은 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "023a3299-166e-42f8-a650-6f091c60b801",
+			"name": "03_USER_USERMANAGE_USER_REGIST_EMPTY_PASSWORD",
+			"commands": [
+				{
+					"id": "95ce25d9-81b4-4ef6-86a3-66a962bbdb85",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "40bc4fe6-0473-42b2-ad3a-66282c13ee9e",
+					"comment": "비밀번호 클릭",
+					"command": "click",
+					"target": "xpath=//span[2]/div/div/div/div",
+					"targets": [
+						[
+							"css=.v-input--is-focused .v-text-field__slot",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[4]/div/span[2]/div/div/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[2]/div/div/div/div",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "502bcfd3-f43a-4508-9c2e-344857a5493c",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"css=.pt-0 > .caption",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[2]/div/span",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//form/div/div[2]/div/span",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "8475405e-700c-4798-b523-911f7789e5e3",
+					"comment": "'비밀번호는 필수값 입니다..' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "비밀번호는 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "a2792244-3a35-4089-a1a3-2691e2e5e204",
+			"name": "04_USER_USERMANAGE_USER_REGIST_EMPTY_PASSWD_CHECK",
+			"commands": [
+				{
+					"id": "2c209ae7-9d6c-4b00-bcd9-2ae3006b5d90",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "1d387abc-1d98-4785-bc5e-f439142055f9",
+					"comment": "비밀번호 확인 클릭",
+					"command": "click",
+					"target": "xpath=//span[3]/div/div/div/div/input",
+					"targets": [
+						[
+							"id=input-313",
+							"id"
+						],
+						[
+							"css=#input-313",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-313']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[4]/div/span[3]/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[3]/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "b718d4e6-faf4-4166-8335-4a6ba6c9ae05",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-300",
+							"id"
+						],
+						[
+							"css=#input-300",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-300']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[3]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "344a56d9-ab9b-40af-8616-21ea59b949a2",
+					"comment": "'비밀번호 확인은 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message' and contains(.,\"비밀번호 확인은  필수값 입니다.\")]",
+					"targets": [],
+					"value": "비밀번호 확인은 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "5eec82ff-d85f-4fd5-a272-7fe68043e504",
+			"name": "05_USER_USERMANAGE_USER_REGIST_EMPTY_COMPANY",
+			"commands": [
+				{
+					"id": "c0d32a80-943c-46bb-b472-9f5fd62639b3",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "05e8ec4d-ed95-4e55-9f36-75d7c313fdb9",
+					"comment": "회사 클릭",
+					"command": "click",
+					"target": "xpath=//label[text()='회사 (필수)']//parent::div",
+					"targets": [
+						[
+							"css=.v-input--is-focused .v-text-field__slot",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[4]/div/span[4]/div/div/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[4]/div/div/div/div",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "0228598b-58f7-4e06-adab-3bf5fae83f3e",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "f8924429-5769-4f0c-b94a-bfc59930b496",
+					"comment": "'회사는 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "회사는 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "0b583d7b-c22a-4869-b1df-00913efc4839",
+			"name": "06_USER_USERMANAGE_USER_REGIST_EMPTY_PHONENUMBER",
+			"commands": [
+				{
+					"id": "5e4d94b5-b325-42f9-a83e-a5c4b32283cb",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "976e2752-f4dd-44b3-badd-1673a515bbe0",
+					"comment": "전화번호 클릭",
+					"command": "click",
+					"target": "xpath=//div[2]/span/div/div/div/div/input",
+					"targets": [
+						[
+							"id=input-325",
+							"id"
+						],
+						[
+							"css=#input-325",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-325']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[5]/div[2]/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "6c65ac03-f854-43a3-b748-baece78ee35d",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "f87cb5ed-fec5-4843-8409-d327d0b65a88",
+					"comment": "'전화번호는 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "전화번호는 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "c3790979-2c8e-4082-8f53-267fad70c41d",
+			"name": "07_USER_USERMANAGE_USER_REGIST_IMPOSSIBLE_EMAIL",
+			"commands": [
+				{
+					"id": "b348f08c-5df2-44a4-8f2c-3167abdb5441",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "38869dbc-9d41-4dd3-9db8-472f4efb8578",
+					"comment": "이메일에 'QA' 입력",
+					"command": "type",
+					"target": "xpath=//span/div/div/div/div/input",
+					"targets": [],
+					"value": "QA"
+				},
+				{
+					"id": "3079fff1-5fd2-4ac2-9f40-4c30bc02199e",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "ba3572af-c9ce-4713-9cf3-86c8f4c80d31",
+					"comment": "'잘못된 이메일 형식입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "잘못된 이메일 형식입니다."
+				}
+			]
+		},
+		{
+			"id": "9cc1c901-226d-4ca0-a7e6-7b195d52e3f3",
+			"name": "09_USER_USERMANAGE_USER_REGIST_IMPOSSIBLE_PASSWORD",
+			"commands": [
+				{
+					"id": "4ff6712f-5deb-4b1b-91ae-22c8d63ad006",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "4fe86bc5-b33a-4fec-a982-8d5e4636b3ee",
+					"comment": "비밀번호에 'qa12345' 입력",
+					"command": "type",
+					"target": "xpath=//span[2]/div/div/div/div/input",
+					"targets": [
+						[
+							"id=input-266",
+							"id"
+						],
+						[
+							"css=#input-266",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-266']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[4]/div/span[2]/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[2]/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": "qa12345"
+				},
+				{
+					"id": "1f7fdbc2-e3be-4d39-ba91-435ccaed4862",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "c8bb2b83-97b0-4638-850e-cb6aafaab65e",
+					"comment": "'비밀번호는 영문, 숫자, 특수문자를 포함 최소 8자 이상이 되어야 합니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "비밀번호는 영문, 숫자, 특수문자를 포함 최소 8자 이상이 되어야 합니다."
+				}
+			]
+		},
+		{
+			"id": "564f8b64-4573-4054-a428-5f9a632d0e35",
+			"name": "10_USER_USERMANAGE_USER_REGIST_IMPOSSIBLE_PHONENUMBER",
+			"commands": [
+				{
+					"id": "a3b05269-f381-4b72-8057-c768485af8ff",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "1a3e247e-fd47-496a-8612-53c57ef4b852",
+					"comment": "전화번호에 '123123' 입력",
+					"command": "type",
+					"target": "xpath=//div[2]/span/div/div/div/div/input",
+					"targets": [
+						[
+							"id=input-282",
+							"id"
+						],
+						[
+							"css=#input-282",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-282']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[5]/div[2]/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": "123123"
+				},
+				{
+					"id": "0833eaa6-4d26-42c0-ac6d-ac2330cc8eaf",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "f136add9-8e63-402a-b0a8-b8ad446189eb",
+					"comment": "'전화번호 형식이 잘못되었습니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "전화번호 형식이 잘못되었습니다."
+				}
+			]
+		},
+		{
+			"id": "8c7e4964-0392-468f-ade7-6d232b5d4149",
+			"name": "11_USER_USERMANAGE_USER_REGIST_CORRECT_PASSWORD",
+			"commands": [
+				{
+					"id": "6e924fa8-9759-45ba-b45e-5e82c2cc4238",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "e30bdda4-b00f-4fd2-a3df-d2963a609e3d",
+					"comment": "비밀번호에 'qa12345@' 입력",
+					"command": "type",
+					"target": "xpath=//span[2]/div/div/div/div/input",
+					"targets": [
+						[
+							"id=input-266",
+							"id"
+						],
+						[
+							"css=#input-266",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-266']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[4]/div/span[2]/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[2]/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": "qa12345@"
+				},
+				{
+					"id": "fe7602a6-59d1-4d42-b535-b02471d97eff",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "caa217b3-bc17-45a6-91a6-e83c79f8ed58",
+					"comment": "'사용가능한 비밀번호입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "사용가능한 비밀번호입니다."
+				}
+			]
+		},
+		{
+			"id": "aeaa41b7-b7d8-4567-b38b-e1ba9e94e260",
+			"name": "12_USER_USERMANAGE_USER_REGIST_WRONG_PASSWORD",
+			"commands": [
+				{
+					"id": "3e07053b-5775-4302-88d5-dfd4cb2e84ea",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "ce3a5644-3b74-4943-809a-73876c6148b4",
+					"comment": "비밀번호에 'qa12345@' 입력",
+					"command": "type",
+					"target": "xpath=//span[2]/div/div/div/div/input",
+					"targets": [
+						[
+							"id=input-266",
+							"id"
+						],
+						[
+							"css=#input-266",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-266']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[4]/div/span[2]/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[2]/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": "qa12345@"
+				},
+				{
+					"id": "d17fc15b-9daa-4b03-a791-f3aa1fd7de07",
+					"comment": "비밀번호 확인에 'qa25251' 입력",
+					"command": "type",
+					"target": "xpath=//span[3]/div/div/div/div/input",
+					"targets": [
+						[
+							"id=input-270",
+							"id"
+						],
+						[
+							"css=#input-270",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-270']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[4]/div/span[3]/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[3]/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": "qa25251"
+				},
+				{
+					"id": "9d31877d-7577-4830-9cfb-810aca2ec656",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "css=.pt-0 > .caption",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "dd0ca71d-e716-4385-907d-9b6f9843dd01",
+					"comment": "'입력한 비밀번호와 일치하지 않습니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message' and contains(.,\"않습니다.\")]",
+					"targets": [],
+					"value": "입력한 비밀번호와 일치하지 않습니다."
+				}
+			]
+		},
+		{
+			"id": "a06af72e-1042-4508-82b1-036304e89abd",
+			"name": "08_USER_USERMANAGE_USER_REGIST_POSSIBLE_EMAIL",
+			"commands": [
+				{
+					"id": "c7043b36-1387-4d05-bbc0-18b95bfe9cd5",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "e8d5be04-a8dc-4134-a073-6be63539edff",
+					"comment": "이메일에 'qa-admin-test@mobigen.com' 입력",
+					"command": "type",
+					"target": "xpath=//span/div/div/div/div/input",
+					"targets": [],
+					"value": "qa-admin-test@mobigen.com"
+				},
+				{
+					"id": "d02ed672-edb3-4e0f-954c-65b3df995629",
+					"comment": "이메일 중복확인 버튼 클릭",
+					"command": "click",
+					"target": "css=.user-id__duplicate-check-button",
+					"targets": [
+						[
+							"css=.user-id__duplicate-check-button",
+							"css:finder"
+						],
+						[
+							"xpath=(//button[@type='button'])[21]",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[3]/div[2]/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[3]/div[2]/button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'중복확인')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "ac2179a9-788a-441c-a303-f9ab3a979ab5",
+					"comment": "'사용가능한 이메일입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "사용가능한 이메일입니다."
+				}
+			]
+		}
+	],
+	"suites": [
+		{
+			"id": "e342fdf2-42c7-4d31-aebd-810103e73788",
+			"name": "USER_USERMANAGE_USER_REGIST",
+			"persistSession": false,
+			"parallel": false,
+			"timeout": 300,
+			"tests": [
+				"7bb7880f-6a70-4888-beb1-c789e26018af",
+				"a7ee7bc9-925c-4b78-bb1b-3582375f3d31",
+				"5c84c7cc-9491-4c67-a9db-206334531a0a",
+				"023a3299-166e-42f8-a650-6f091c60b801",
+				"a2792244-3a35-4089-a1a3-2691e2e5e204",
+				"5eec82ff-d85f-4fd5-a272-7fe68043e504",
+				"0b583d7b-c22a-4869-b1df-00913efc4839",
+				"c3790979-2c8e-4082-8f53-267fad70c41d",
+				"a06af72e-1042-4508-82b1-036304e89abd",
+				"9cc1c901-226d-4ca0-a7e6-7b195d52e3f3",
+				"564f8b64-4573-4054-a428-5f9a632d0e35",
+				"8c7e4964-0392-468f-ade7-6d232b5d4149",
+				"aeaa41b7-b7d8-4567-b38b-e1ba9e94e260"
+			]
+		}
+	],
+	"urls": [
+		"http://192.168.102.114:30006"
+	],
+	"plugins": []
+}

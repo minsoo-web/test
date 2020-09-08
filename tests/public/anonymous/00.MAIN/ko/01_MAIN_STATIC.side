@@ -1,0 +1,382 @@
+{
+	"id": "150da78f-c6c4-457d-ae21-2390a7724d14",
+	"version": "2.0",
+	"name": "MAIN_STATIC",
+	"url": "192.168.102.136:8888",
+	"tests": [
+		{
+			"id": "a7ee7bc9-925c-4b78-bb1b-3582375f3d31",
+			"name": "99_LOGIN",
+			"commands": [
+				{
+					"id": "4d7d4baf-e079-4717-ba3c-0b5a9a84babc",
+					"comment": "창열기",
+					"command": "open",
+					"target": "http://192.168.102.114:30006",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "ae84ba76-a9b4-4b99-b6a6-632566f64e00",
+					"comment": "",
+					"command": "setWindowSize",
+					"target": "1600x800",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "98e2d773-9b14-4916-af84-e01dabf00023",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				}
+			]
+		},
+		{
+			"id": "e2427760-5306-4036-9983-c45ef6f87db5",
+			"name": "01_MAIN_STATIC_TEXT",
+			"commands": [
+				{
+					"id": "98719158-e9ae-49cc-a3f0-6fabb22f0506",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "cc455ae8-dd93-447b-971d-c5c3445ec3d6",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "2d9ecdd2-b756-46b5-8f42-e14c40ea5a02",
+					"comment": "메인화면 문구 확인",
+					"command": "verifyElementPresent",
+					"target": "xpath=//h2[contains(.,'Connect, Discover and Visualize Big Data')]",
+					"targets": [
+						[
+							"css=.main-visual__title",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div/div/div/div[3]/div/div/div/h2",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//h2",
+							"xpath:position"
+						],
+						[
+							"xpath=//h2[contains(.,'Connect, Discover and Visualize Big Data')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "0599b699-afc3-4ba3-a676-feb40f61cb95",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "7c934012-7808-4e72-b0b2-32a1211fbd84",
+					"comment": "Main Feature 확인",
+					"command": "verifyElementPresent",
+					"target": "xpath=//h3[contains(.,'Main Feature')]",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "d2bd5e39-fc96-42b6-9260-1f0c8720ec68",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "67d533dc-52b3-48bc-a847-8583b7d0ce3a",
+					"comment": "IRIS Analyzer 확인",
+					"command": "verifyElementPresent",
+					"target": "xpath=//h3[contains(.,'IRIS Analyzer')]",
+					"targets": [
+						[
+							"css=.v-responsive__content:nth-child(3) .display-1",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div[3]/div/div/div[3]/div/div/div/h3",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[3]/div/div/div/h3",
+							"xpath:position"
+						],
+						[
+							"xpath=//h3[contains(.,'IRIS Analyzer')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "46f9685e-9793-4e08-b705-9404a6ebf8bf",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "0653dc93-5ab7-4554-8d3f-98735f8889d4",
+					"comment": "IRIS Studio 확인",
+					"command": "verifyElementPresent",
+					"target": "xpath=//h3[contains(.,'IRIS Studio')]",
+					"targets": [
+						[
+							"css=.container:nth-child(5) .display-1",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div[5]/div/div/div[3]/div/div/div/h3",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[5]/div/div/div[3]/div/div/div/h3",
+							"xpath:position"
+						],
+						[
+							"xpath=//h3[contains(.,'IRIS Studio')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				}
+			]
+		},
+		{
+			"id": "4713201f-7458-4ca4-9b74-df645860adaa",
+			"name": "98_LOADING_AWAITER",
+			"commands": [
+				{
+					"id": "a3c5b779-b9b9-4ab6-9829-02bc860561d5",
+					"comment": "",
+					"command": "do",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "4cd0a26d-5ce1-4f95-b6ce-9ed6417653fb",
+					"comment": "",
+					"command": "pause",
+					"target": "500",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "00baeb3a-69d8-47c8-90e4-266213838aee",
+					"comment": "",
+					"command": "storeXpathCount",
+					"target": "xpath=//div[@id='blind' and @style='display: none;']",
+					"targets": [],
+					"value": "is_loading"
+				},
+				{
+					"id": "05d02647-9b81-400e-b13f-a78ae09b92e0",
+					"comment": "",
+					"command": "repeatIf",
+					"target": "${is_loading}==0",
+					"targets": [],
+					"value": "100"
+				}
+			]
+		},
+		{
+			"id": "66294b74-0161-40d3-abe2-d4ef8a909fc2",
+			"name": "02_MAIN_STATIC_IMAGE",
+			"commands": [
+				{
+					"id": "443e90b3-c062-4edc-a211-37c911d1fc23",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "f8234e81-d399-4102-9bd2-a014cc146b6a",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "f2148cb2-8fdd-4e10-9878-4302b39abc2d",
+					"comment": "쉽고",
+					"command": "verifyElementPresent",
+					"target": "css=.main-feature-card__easy-img",
+					"targets": [
+						[
+							"css=.main-feature-card__easy-img",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div[2]/div/div/div/div[2]/div/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/div/div/div[2]/div/div/div",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "deb82d5e-9a8f-4050-8de0-1d2e4c9d9ec1",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "f5f263af-ba03-4c67-8bfa-40074219ea21",
+					"comment": "빠르고",
+					"command": "verifyElementPresent",
+					"target": "css=.main-feature-card__quick-img",
+					"targets": [
+						[
+							"css=.main-feature-card__quick-img",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div[2]/div/div/div/div[2]/div[2]/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div[2]/div/div",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "1aa39792-8b05-45f5-9fc9-524690190b29",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "a49503db-9af9-412b-b4ea-32874442e5e8",
+					"comment": "검증된",
+					"command": "verifyElementPresent",
+					"target": "css=.main-feature-card__verify-img",
+					"targets": [
+						[
+							"css=.main-feature-card__verify-img",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div[2]/div/div/div/div[2]/div[3]/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div[3]/div/div",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "b4d670c8-25c0-4eaf-9e89-f98751765861",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "637b4ce4-52b6-49f7-9bee-ed826208da39",
+					"comment": "IRIS Analyzer 확인",
+					"command": "verifyElementPresent",
+					"target": "css=.container:nth-child(3) img",
+					"targets": [
+						[
+							"css=.container:nth-child(3) img",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div[3]/div/div/div[3]/div/div[2]/div/img",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/img",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "4822b5f6-47b9-4fc7-b1e5-252a97f6486c",
+					"comment": "대기",
+					"command": "pause",
+					"target": "1000",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "09aeed28-645c-455d-a439-c679396cb58f",
+					"comment": "IRIS Studio 확인",
+					"command": "verifyElementPresent",
+					"target": "css=.container:nth-child(5) img",
+					"targets": [
+						[
+							"css=.container:nth-child(5) img",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/div/div/div[5]/div/div/div[3]/div/div[2]/div/img",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[5]/div/div/div[3]/div/div[2]/div/img",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				}
+			]
+		}
+	],
+	"suites": [
+		{
+			"id": "e342fdf2-42c7-4d31-aebd-810103e73788",
+			"name": "MAIN_STATIC",
+			"persistSession": false,
+			"parallel": false,
+			"timeout": 300,
+			"tests": [
+				"e2427760-5306-4036-9983-c45ef6f87db5",
+				"a7ee7bc9-925c-4b78-bb1b-3582375f3d31",
+				"66294b74-0161-40d3-abe2-d4ef8a909fc2"
+			]
+		}
+	],
+	"urls": [
+		"http://192.168.102.114:30006"
+	],
+	"plugins": []
+}

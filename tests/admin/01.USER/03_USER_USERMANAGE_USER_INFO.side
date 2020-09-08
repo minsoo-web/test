@@ -1,0 +1,928 @@
+{
+	"id": "8da82329-42cf-4f13-a564-e99798be90b6",
+	"version": "2.0",
+	"name": "USER_USERMANAGE_USER_INFO",
+	"url": "http://192.168.102.114:30006/admin",
+	"tests": [
+		{
+			"id": "a7ee7bc9-925c-4b78-bb1b-3582375f3d31",
+			"name": "99_LOGIN",
+			"commands": [
+				{
+					"id": "4d7d4baf-e079-4717-ba3c-0b5a9a84babc",
+					"comment": "창열기",
+					"command": "open",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "ae84ba76-a9b4-4b99-b6a6-632566f64e00",
+					"comment": "",
+					"command": "setWindowSize",
+					"target": "1600x800",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "442bd792-a85a-477f-997f-0d0c791dff91",
+					"comment": "[로그인 되어있을 경우] 로딩 대기",
+					"command": "run",
+					"target": "98_LOADING_AWAITER",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "4ec74982-9f9d-4375-a681-b37710e47fd8",
+					"comment": "",
+					"command": "storeXpathCount",
+					"target": "xpath=//button[contains(.,'모비젠')]",
+					"targets": [],
+					"value": "Login"
+				},
+				{
+					"id": "204c2542-59b6-4f92-8e26-96cf68d72293",
+					"comment": "",
+					"command": "if",
+					"target": "${Login} > 0",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "dfb976e3-d8b0-4f65-a0ce-e2fa64f5877d",
+					"comment": "",
+					"command": "click",
+					"target": "xpath=//button[contains(.,'모비젠')]",
+					"targets": [
+						[
+							"css=.gnb-user-dropdown__button",
+							"css:finder"
+						],
+						[
+							"xpath=(//button[@type='button'])[4]",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div/header/div/div/div[3]/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[3]/button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'모비젠')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "ce7c0336-7def-45dd-889c-35009c202457",
+					"comment": "",
+					"command": "click",
+					"target": "id=list-item-125",
+					"targets": [
+						[
+							"id=list-item-125",
+							"id"
+						],
+						[
+							"css=#list-item-125",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='list-item-125']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[5]/div/div[2]/div/div",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "f76f227f-5a38-45d0-a7ca-8fdf6471485c",
+					"comment": "",
+					"command": "waitForElementVisible",
+					"target": "xpath=//button[contains(.,'로그인')]",
+					"targets": [
+						[
+							"css=.primary",
+							"css:finder"
+						],
+						[
+							"xpath=//button[@type='submit']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div[2]/div/div/div/span/form/div/div/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'로그인')]",
+							"xpath:innerText"
+						]
+					],
+					"value": "30000"
+				},
+				{
+					"id": "74315e0e-18aa-4d7e-9498-a1c50beabff0",
+					"comment": "",
+					"command": "end",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "fd058b1f-b987-42e6-b1b9-685cdcd4e458",
+					"comment": "id 입력",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"아이디\"]",
+					"targets": [
+						[
+							"css=.v-input--is-focused .v-text-field__slot",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div[2]/div/div/div/span/form/span/div/div/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span/div/div/div/div",
+							"xpath:position"
+						]
+					],
+					"value": "admin"
+				},
+				{
+					"id": "e1134a87-75ed-4c0f-878f-9a549ef81da1",
+					"comment": "대기",
+					"command": "pause",
+					"target": "",
+					"targets": [],
+					"value": "1000"
+				},
+				{
+					"id": "84983e2a-143e-457d-aaba-576ff1ed8c4e",
+					"comment": "pw 입력",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"비밀번호\"]",
+					"targets": [
+						[
+							"css=.v-input--is-focused .v-text-field__slot",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div[2]/div/div/div/span/form/span[2]/div/div/div/div",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span[2]/div/div/div/div",
+							"xpath:position"
+						]
+					],
+					"value": "mobigen9360$$"
+				},
+				{
+					"id": "b5327a97-60b7-4fdf-8292-3cd34dd7df15",
+					"comment": "대기",
+					"command": "pause",
+					"target": "",
+					"targets": [],
+					"value": "1000"
+				},
+				{
+					"id": "fea0f686-ff3c-487a-87b1-9271dc635951",
+					"comment": "로그인 클릭",
+					"command": "click",
+					"target": "xpath=//button[contains(.,'로그인')]",
+					"targets": [
+						[
+							"css=.row:nth-child(4) .login__submit-button",
+							"css:finder"
+						],
+						[
+							"xpath=//button[@type='submit']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div/div[2]/div[2]/div/div/span/form/div[2]/div/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'Login')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "24e5d1cb-1d5b-4cf1-b7cc-ed7135ad2859",
+					"comment": "로그인 후 창 뜰때까지 대기",
+					"command": "run",
+					"target": "98_LOADING_AWAITER",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "cb7f5da7-e339-4c2f-9654-e3f50cf057f2",
+					"comment": "유저 정보 확인",
+					"command": "assertText",
+					"target": "xpath=//span[contains(.,'모비젠')]",
+					"targets": [],
+					"value": "모비젠"
+				},
+				{
+					"id": "bc41d4df-515f-4874-a8bc-14ad6a1db14f",
+					"comment": "qa.mobigen@gmail.com 클릭",
+					"command": "click",
+					"target": "xpath=//button[contains(.,'qa.mobigen@gmail.com')]",
+					"targets": [
+						[
+							"css=.ag-cell-focus > .user-id-highlight",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div/main/div/div/div/div[2]/div[3]/div/div/div/div[3]/div[2]/div/div/div/div[3]/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div/div/div/div[3]/button",
+							"xpath:position"
+						],
+						[
+							"xpath=//button[contains(.,'qa.mobigen@gmail.com')]",
+							"xpath:innerText"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "903f8fee-485d-40f8-ba2d-5309f48cc1e0",
+					"comment": "상단 '회원관리' 타이틀 확인",
+					"command": "waitForElementVisible",
+					"target": "xpath=//span[text()=\"회원관리\"]",
+					"targets": [],
+					"value": "30000"
+				}
+			]
+		},
+		{
+			"id": "4713201f-7458-4ca4-9b74-df645860adaa",
+			"name": "98_LOADING_AWAITER",
+			"commands": [
+				{
+					"id": "3de3a2b1-f17a-453d-94af-f2d69e0492be",
+					"comment": "",
+					"command": "waitForElementPresent",
+					"target": "xpath=//div[@style=\"z-index: 300; display: none;\"]",
+					"targets": [],
+					"value": "30000"
+				}
+			]
+		},
+		{
+			"id": "5eec82ff-d85f-4fd5-a272-7fe68043e504",
+			"name": "01_USER_USERMANAGE_USER_INFO_SUMMARY",
+			"commands": [
+				{
+					"id": "c0d32a80-943c-46bb-b472-9f5fd62639b3",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "63a66b14-835b-437f-be8c-02aba7a1ea58",
+					"comment": "요약탭 클릭",
+					"command": "click",
+					"target": "xpath=//div[text()=\"요약\"]",
+					"targets": [
+						[
+							"css=.v-tab--active",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[2]",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/div/div[2]/div/div[2]",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "92ff5bbd-14ba-41ac-aeba-4eb1fc864faf",
+					"comment": "이메일 확인",
+					"command": "assertText",
+					"target": "css=.info-table tr:nth-child(1) > td:nth-child(2)",
+					"targets": [],
+					"value": "qa.mobigen@gmail.com"
+				},
+				{
+					"id": "4e056ad0-0232-4821-b81f-b1b087396748",
+					"comment": "이름 확인",
+					"command": "assertText",
+					"target": "css=.info-table tr:nth-child(1) > td:nth-child(4)",
+					"targets": [
+						[
+							"css=.info-table tr:nth-child(1) > td:nth-child(4)",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[3]/table/tbody/tr/td[2]",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[3]/table/tbody/tr/td[2]",
+							"xpath:position"
+						],
+						[
+							"xpath=//td[contains(.,'QA')]",
+							"xpath:innerText"
+						]
+					],
+					"value": "QA"
+				},
+				{
+					"id": "397ff020-70f6-4239-9773-cb010fe5cbe9",
+					"comment": "회사 확인",
+					"command": "assertText",
+					"target": "css=.info-table tr:nth-child(2) > td:nth-child(2)",
+					"targets": [
+						[
+							"css=.info-table tr:nth-child(2) > td:nth-child(2)",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[3]/table/tbody/tr[2]/td",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[3]/table/tbody/tr[2]/td",
+							"xpath:position"
+						]
+					],
+					"value": "mobigen"
+				},
+				{
+					"id": "a854923f-b91b-4ba0-93d5-3284ea3ed10b",
+					"comment": "전화번호 확인",
+					"command": "assertText",
+					"target": "css=.info-table tr:nth-child(2) > td:nth-child(4)",
+					"targets": [
+						[
+							"css=.info-table tr:nth-child(2) > td:nth-child(4)",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[3]/table/tbody/tr[2]/td[2]",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[3]/table/tbody/tr[2]/td[2]",
+							"xpath:position"
+						],
+						[
+							"xpath=//td[contains(.,'010-0000-0000')]",
+							"xpath:innerText"
+						]
+					],
+					"value": "010-0000-0000"
+				},
+				{
+					"id": "46b2b70b-047b-4433-97c3-f9e0acf7cc4b",
+					"comment": "서비스 정보 확인",
+					"command": "assertText",
+					"target": "xpath=//span[text()=\"이용중인 서비스가 없습니다.\"]",
+					"targets": [],
+					"value": "이용중인 서비스가 없습니다."
+				},
+				{
+					"id": "988422b4-8f04-4638-b0d8-d4ea76910646",
+					"comment": "닫기 클릭",
+					"command": "click",
+					"target": "css=.v-icon--link",
+					"targets": [
+						[
+							"css=.v-icon--link",
+							"css:finder"
+						],
+						[
+							"xpath=(//button[@type='button'])[21]",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div/div[2]/button[2]/span/button",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//span/button",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				}
+			]
+		},
+		{
+			"id": "41137bc5-af88-411c-8f20-4afb0cfd3db5",
+			"name": "03_USER_USERMANAGE_USER_INFO_EMPTY_COMPANY",
+			"commands": [
+				{
+					"id": "6bb60cf5-5605-4f32-997b-801bfae0bc79",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "9c934e24-c64e-4593-b97f-fcd930ead329",
+					"comment": "회원 정보 탭 클릭",
+					"command": "click",
+					"target": "xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+					"targets": [
+						[
+							"css=.v-tab:nth-child(3)",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/div[3]",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "be82aa12-e929-4cb3-a0a5-888ba60efb88",
+					"comment": "NumStr 에 회사명저장",
+					"command": "storeValue",
+					"target": "xpath=//input[@placeholder=\"회사\"]",
+					"targets": [],
+					"value": "NumStr"
+				},
+				{
+					"id": "1703061e-0468-41cf-ae26-5d31fc955dd2",
+					"comment": "커서를 회사명 맨 앞으로 이동",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"회사\"]",
+					"targets": [],
+					"value": "${KEY_HOME}"
+				},
+				{
+					"id": "5ae976cf-96f0-449b-961e-bb1f6b938d46",
+					"comment": "WHILE -> NumStr이 빈 문자열이 아닐때마다",
+					"command": "while",
+					"target": "${NumStr} != \"\"",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "2b944980-af0d-45d6-b80e-7089a19a3b49",
+					"comment": "NumStr 하나씩 삭제",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"회사\"]",
+					"targets": [],
+					"value": "${KEY_DELETE}"
+				},
+				{
+					"id": "3bd4e64f-55bc-4794-83b3-af4f740cde5e",
+					"comment": "NumStr 에 회사명 갱신",
+					"command": "storeValue",
+					"target": "xpath=//input[@placeholder=\"회사\"]",
+					"targets": [],
+					"value": "NumStr"
+				},
+				{
+					"id": "1259b24b-f0c8-42b3-a836-cfa8c2c1e2d9",
+					"comment": "WHILE <- END",
+					"command": "end",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "32eb776a-1848-4659-8b3f-2bb5b66a41a5",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "xpath=//input[@placeholder='이름']",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "8f797da3-c878-48b6-92d6-7e598d1f500b",
+					"comment": "'회사는 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "회사는 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "7f7b7742-a7a0-48e0-ac33-aab8ec1ffefd",
+			"name": "02_USER_USERMANAGE_USER_INFO_EMPTY_NAME",
+			"commands": [
+				{
+					"id": "1ba656c1-cf32-4bcc-b750-717649d4c759",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "eb4d9751-738c-44ac-8e2a-349889c0ba9b",
+					"comment": "회원 정보 탭 클릭",
+					"command": "click",
+					"target": "xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+					"targets": [
+						[
+							"css=.v-tab:nth-child(3)",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/div[3]",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "73577349-ed68-43ca-9799-150f6973d730",
+					"comment": "NumStr 에 이름 저장",
+					"command": "storeValue",
+					"target": "xpath=//input[@placeholder='이름']",
+					"targets": [],
+					"value": "NumStr"
+				},
+				{
+					"id": "797feb0a-1b9f-4f6a-893f-11c726b91d36",
+					"comment": "커서를 회사명 맨 앞으로 이동",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"이름\"]",
+					"targets": [],
+					"value": "${KEY_HOME}"
+				},
+				{
+					"id": "b9b1ecfa-26d6-4650-a262-dbf0277edb8c",
+					"comment": "WHILE -> NumStr이 빈 문자열이 아닐때마다",
+					"command": "while",
+					"target": "${NumStr} != \"\"",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "1c6ac7ef-5be0-457b-a65d-300c31b12250",
+					"comment": "NumStr 하나씩 삭제",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder='이름']",
+					"targets": [],
+					"value": "${KEY_DELETE}"
+				},
+				{
+					"id": "7046a40f-2559-4036-b884-be6bb3d9ae29",
+					"comment": "NumStr 에 이름갱신",
+					"command": "storeValue",
+					"target": "xpath=//input[@placeholder='이름']",
+					"targets": [],
+					"value": "NumStr"
+				},
+				{
+					"id": "a7ad6bcf-7492-4bb8-9dea-2a3b1d666a19",
+					"comment": "WHILE <- END",
+					"command": "end",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "ca11c2be-d689-459f-8ef6-3777567ae989",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "xpath=//input[@placeholder='전화번호']",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "4dc1c63d-af69-4197-9090-f11bcff2e791",
+					"comment": "'이름은 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "이름은 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "50af3988-ace3-436f-ae37-255cb385eb0d",
+			"name": "04_USER_USERMANAGE_USER_INFO_EMPTY_PHONENUMBER",
+			"commands": [
+				{
+					"id": "9c144c17-f4c8-42bf-9cf4-2815a88d2932",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "3d8efc9d-4899-4285-9411-1db0ae146c14",
+					"comment": "회원 정보 탭 클릭",
+					"command": "click",
+					"target": "xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+					"targets": [
+						[
+							"css=.v-tab:nth-child(3)",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/div[3]",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "a79d1473-0ecc-4b36-a620-d88320bf736a",
+					"comment": "NumStr 에 전화번호 저장",
+					"command": "storeValue",
+					"target": "xpath=//input[@placeholder=\"전화번호\"]",
+					"targets": [],
+					"value": "NumStr"
+				},
+				{
+					"id": "bfe48279-5d63-4d9c-a4b8-a87742722356",
+					"comment": "커서를 회사명 맨 앞으로 이동",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"전화번호\"]",
+					"targets": [],
+					"value": "${KEY_HOME}"
+				},
+				{
+					"id": "284a6290-4b3e-40e2-9ba4-dcc4d724f207",
+					"comment": "WHILE -> NumStr이 빈 문자열이 아닐때마다",
+					"command": "while",
+					"target": "${NumStr} != \"\"",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "92a89c1e-52cd-40d0-973a-977392c9557d",
+					"comment": "NumStr 하나씩 삭제",
+					"command": "sendKeys",
+					"target": "xpath=//input[@placeholder=\"전화번호\"]",
+					"targets": [],
+					"value": "${KEY_DELETE}"
+				},
+				{
+					"id": "44d552b2-5043-46dc-b45e-58d5ddf4f52d",
+					"comment": "NumStr 에 전화번호 갱신",
+					"command": "storeValue",
+					"target": "xpath=//input[@placeholder=\"전화번호\"]",
+					"targets": [],
+					"value": "NumStr"
+				},
+				{
+					"id": "ea6f6313-4b06-4dd7-a650-cdac5b3db7bb",
+					"comment": "WHILE <- END",
+					"command": "end",
+					"target": "",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "3874715f-b685-4292-bef8-d66231ca4136",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "xpath=//input[@placeholder='이름']",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "431dc60a-0b77-418b-a7ff-fe71249a4b6b",
+					"comment": "'전화번호는 필수값 입니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "전화번호는 필수값 입니다."
+				}
+			]
+		},
+		{
+			"id": "10e40324-cb57-4b32-899b-865df2e0ef8b",
+			"name": "05_USER_USERMANAGE_USER_INFO_IMPOSSIBLE_PHONENUMBER",
+			"commands": [
+				{
+					"id": "86f7051c-f6a2-47ca-80f7-3bbd6a983724",
+					"comment": "웹 접속",
+					"command": "run",
+					"target": "99_LOGIN",
+					"targets": [],
+					"value": ""
+				},
+				{
+					"id": "7e5ff017-d615-498c-a4f0-f6d4a62f6522",
+					"comment": "회원 정보 탭 클릭",
+					"command": "click",
+					"target": "xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+					"targets": [
+						[
+							"css=.v-tab:nth-child(3)",
+							"css:finder"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[3]",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/div/div[3]",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "ea7af3bd-fd74-46d6-8335-4f8cc7973f62",
+					"comment": "전화번호에 '123123' 입력",
+					"command": "type",
+					"target": "xpath=//input[@placeholder=\"전화번호\"]",
+					"targets": [
+						[
+							"id=input-282",
+							"id"
+						],
+						[
+							"css=#input-282",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-282']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[2]/div/div[2]/span/form/div/div[5]/div[2]/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[2]/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": "123123"
+				},
+				{
+					"id": "4c5a4a8e-930d-4ba3-b676-49ac33531b84",
+					"comment": "다른 컴포넌트 클릭",
+					"command": "click",
+					"target": "xpath=//input[@placeholder='이름']",
+					"targets": [
+						[
+							"id=input-1240",
+							"id"
+						],
+						[
+							"css=#input-1240",
+							"css:finder"
+						],
+						[
+							"xpath=//input[@id='input-1240']",
+							"xpath:attributes"
+						],
+						[
+							"xpath=//div[@id='app']/div[3]/div/div[2]/span/form/div/div[4]/div/span/div/div/div/div/input",
+							"xpath:idRelative"
+						],
+						[
+							"xpath=//div[4]/div/span/div/div/div/div/input",
+							"xpath:position"
+						]
+					],
+					"value": ""
+				},
+				{
+					"id": "61dd9631-e3e8-4fc1-acbd-1436f2d137d6",
+					"comment": "'전화번호 형식이 잘못되었습니다.' 확인",
+					"command": "assertText",
+					"target": "xpath=//div[@class='v-messages__message']",
+					"targets": [],
+					"value": "전화번호 형식이 잘못되었습니다."
+				}
+			]
+		}
+	],
+	"suites": [
+		{
+			"id": "e342fdf2-42c7-4d31-aebd-810103e73788",
+			"name": "USER_USERMANAGE_USER_INFO",
+			"persistSession": false,
+			"parallel": false,
+			"timeout": 300,
+			"tests": [
+				"41137bc5-af88-411c-8f20-4afb0cfd3db5",
+				"50af3988-ace3-436f-ae37-255cb385eb0d",
+				"5eec82ff-d85f-4fd5-a272-7fe68043e504",
+				"7f7b7742-a7a0-48e0-ac33-aab8ec1ffefd",
+				"10e40324-cb57-4b32-899b-865df2e0ef8b",
+				"a7ee7bc9-925c-4b78-bb1b-3582375f3d31"
+			]
+		}
+	],
+	"urls": [
+		"http://192.168.102.114:30006"
+	],
+	"plugins": []
+}
