@@ -31,7 +31,8 @@ pipeline {
                 sh"""
                 # 테스트 진행
                 # docker exec -t -w /root/IRIS-E2E-SAAS new-iris-e2e qa-script/initialize.sh;
-                docker exec -t -w /root/IRIS-E2E-SAAS new-iris-e2e qa-script/run-e2e-headless-side.sh
+                docker exec -t -w /root/IRIS-E2E-SAAS new-iris-e2e script/run_side.py
+                docker exec -t -w /root/IRIS-E2E-SAAS new-iris-e2e script/run_side.sh
                 """
                 echo "END STAGE"
             }    
