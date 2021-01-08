@@ -7,4 +7,9 @@ html {
 }
 #app {
   position: relative;
+
+  .box {
+    border: 1px solid;
+    border-radius: 8px;
+  }
 }
