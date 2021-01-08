@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    is_search: true,
+    is_search: false,
     search_query: null
   },
   mutations: {
