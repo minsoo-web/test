@@ -29,7 +29,6 @@
     flex-direction: column;
     align-items: center;
     padding: 26px 0;
-    border: 1px solid;
 
     .header-title {
       width: 700px;

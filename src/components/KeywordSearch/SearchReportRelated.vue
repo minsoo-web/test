@@ -83,12 +83,13 @@
 
     .related-title {
       margin-bottom: 20px;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .related-table {
       width: 100%;
       border-spacing: 10px 0;
+      font-size: 12px;
 
       td,
       th {
@@ -112,6 +113,7 @@
       width: 100%;
       text-align: center;
       text-decoration: underline;
+      font-size: 12px;
     }
   }
 </style>

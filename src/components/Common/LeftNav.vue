@@ -23,6 +23,9 @@
     width: 240px;
     height: 100vh;
     border-right: 1px solid;
+    z-index: 99;
+    background-color: #fff;
+
     .logo-wrapper {
       padding: 17px 20px;
       border-bottom: 1px solid;

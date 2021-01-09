@@ -1,17 +1,17 @@
 <template>
   <ul class="search-report-count-summary box">
     <li>
-      <strong>검색된 상품수</strong>
-      <span v-if="is_search">{{ parsed_result.total }} 개</span>
+      <span>검색된 상품수</span>
+      <strong v-if="is_search">{{ parsed_result.total }} 개</strong>
       <loading-gif v-else :size="loading_size" />
     </li>
     <li>
-      <strong>한 달 검색수</strong>
-      <span v-if="is_search">{{ parsed_result.month_total }} 회</span>
+      <span>한 달 검색수</span>
+      <strong v-if="is_search">{{ parsed_result.month_total }} 회</strong>
       <loading-gif v-else :size="loading_size" />
     </li>
     <li>
-      <strong>검색 비율</strong>
+      <span>검색 비율</span>
       <div v-if="is_search" class="search_device_ratio">
         <div
           class="desktop_ratio"
@@ -38,13 +38,15 @@
     name: "search-report-count-summary",
     components: { LoadingGif },
     computed: {
-      ...mapState(["is_search", "count_summary"]),
+      ...mapState(["is_search", "count_summary", "keyword_total_count"]),
       parsed_result() {
         return {
-          total: this.parsing_number(this.count_summary.total),
-          month_total: this.parsing_number(this.count_summary.month_total),
-          desktop_ratio: this.count_summary.search_device_ratio.desktop,
-          mobile_ratio: this.count_summary.search_device_ratio.mobile
+          total: this.parsing_number(this.keyword_total_count),
+          month_total: this.parsing_number(
+            this.count_summary.monthlySearchCnt.total
+          ),
+          desktop_ratio: this.count_summary.monthlySearchRate.desktop,
+          mobile_ratio: this.count_summary.monthlySearchRate.mobile
         };
       },
       loading_size() {
@@ -66,13 +68,13 @@
 <style lang="scss" scoped>
   .search-report-count-summary {
     width: 316px;
-    margin-left: 20px;
+    margin-left: 50px;
     li {
       display: flex;
       justify-content: space-between;
       width: 100%;
       padding: 15px;
-      font-size: 14px;
+      font-size: 16px;
       box-sizing: border-box;
 
       [class$="_ratio"] {

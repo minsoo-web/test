@@ -12,4 +12,12 @@ html {
     border: 1px solid;
     border-radius: 8px;
   }
+
+  [role="main"] {
+    margin-left: 240px;
+
+    &.expand {
+      width: 100%;
+    }
+  }
 }
