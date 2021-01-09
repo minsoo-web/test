@@ -3,33 +3,37 @@
     <div class="related-title">
       <strong>연관 키워드</strong>
     </div>
-    <table v-if="is_search" class="related-table">
-      <caption></caption>
-      <thead>
-        <tr>
-          <th scope="col">키워드</th>
-          <th scope="col">검색량</th>
-          <th scope="col">상품수</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>여성 롱패딩</td>
-          <td>20</td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>여성 롱패딩</td>
-          <td>20</td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>여성 롱패딩</td>
-          <td>20</td>
-          <td>20</td>
-        </tr>
-      </tbody>
-    </table>
+    <div v-if="is_search">
+      <table class="related-table">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">키워드</th>
+            <th scope="col">검색량</th>
+            <th scope="col">상품수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(keyword, index) in keyword_related"
+            v-show="index < show_related_number"
+            :key="keyword.tag + index"
+          >
+            <td>{{ keyword.tag }}</td>
+            <td>{{ keyword.searchCount }}</td>
+            <td>{{ keyword.productCount }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <a
+        href="#"
+        class="btn-more"
+        v-if="related_length > show_related_number"
+        @click="related_expand"
+      >
+        더보기
+      </a>
+    </div>
     <loading-gif v-else :size="loading_size" />
   </div>
 </template>
@@ -41,11 +45,31 @@
     name: "search-report-related",
     components: { LoadingGif },
     computed: {
-      ...mapState(["is_search"]),
+      ...mapState(["is_search", "keyword_related"]),
       loading_size() {
         return {
           width: "100%"
         };
+      },
+      related_length() {
+        return this.keyword_related.length;
+      }
+    },
+    watch: {
+      is_search() {
+        // 재검색이 이루어지면 초기화
+        this.show_related_number = 10;
+      }
+    },
+    data() {
+      return {
+        show_related_number: 10
+      };
+    },
+    methods: {
+      related_expand(e) {
+        e.preventDefault();
+        this.show_related_number += 10;
       }
     }
   };
@@ -80,6 +104,14 @@
       tr > td {
         text-align: right;
       }
+    }
+    .btn-more {
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+      text-align: center;
+      text-decoration: underline;
     }
   }
 </style>

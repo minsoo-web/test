@@ -9,8 +9,10 @@ export default new Vuex.Store({
     is_search: false,
     search_query: null,
     loading_src: require("@/assets/images/loading.gif"),
+
     keyword_thumbnail: null,
-    count_summary: null
+    count_summary: null,
+    keyword_related: null
   },
   mutations: {
     set_search_state(state, payload) {
@@ -24,6 +26,9 @@ export default new Vuex.Store({
     },
     set_countSummary(state, payload) {
       state.count_summary = payload;
+    },
+    set_related(state, payload) {
+      state.keyword_related = payload;
     }
   },
   actions: {
@@ -49,6 +54,10 @@ export default new Vuex.Store({
             month_total: res.data.relKeywordStat.monthlySearchCnt.total, // 한 달 검색 수
             search_device_ratio: res.data.relKeywordStat.monthlySearchRate // 객체, desktop, mobile
           });
+
+          // 연관 검색어
+          commit("set_related", res.data.relatedTags);
+
           console.log(res);
           commit("set_search_query", query);
           commit("set_search_state", true);
