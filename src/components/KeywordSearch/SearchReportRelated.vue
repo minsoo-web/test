@@ -3,7 +3,7 @@
     <div class="related-title">
       <strong>연관 키워드</strong>
     </div>
-    <table class="related-table">
+    <table v-if="is_search" class="related-table">
       <caption></caption>
       <thead>
         <tr>
@@ -30,23 +30,35 @@
         </tr>
       </tbody>
     </table>
+    <loading-gif v-else :size="loading_size" />
   </div>
 </template>
 
 <script>
+  import { mapState } from "vuex";
+  import LoadingGif from "@/components/Common/LoadingGif.vue";
   export default {
-    name: "search-report-related"
+    name: "search-report-related",
+    components: { LoadingGif },
+    computed: {
+      ...mapState(["is_search"]),
+      loading_size() {
+        return {
+          width: "100%"
+        };
+      }
+    }
   };
 </script>
 
 <style lang="scss" scoped>
   .search-report-related {
     width: 250px;
-    min-height: 520px;
-    padding: 0 20px;
+    // min-height: 520px;
+    padding: 20px;
 
     .related-title {
-      padding: 20px 0;
+      margin-bottom: 20px;
       font-size: 14px;
     }
 

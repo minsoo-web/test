@@ -1,7 +1,7 @@
 <template>
-  <div class="keyword-search" :class="{ after_search: is_search }">
+  <div class="keyword-search" :class="{ after_search: search_query }">
     <search-header :is_search="is_search" />
-    <search-report v-if="is_search" />
+    <search-report v-if="search_query" />
   </div>
 </template>
 
@@ -11,7 +11,7 @@
   import { mapState } from "vuex";
   export default {
     name: "keyword-search",
-    computed: { ...mapState(["is_search"]) },
+    computed: { ...mapState(["is_search", "search_query"]) },
     components: { SearchHeader, SearchReport }
   };
 </script>

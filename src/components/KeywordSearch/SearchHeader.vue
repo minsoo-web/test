@@ -1,10 +1,10 @@
 <template>
-  <header class="search-header" :class="{ after_search: is_search }">
+  <header class="search-header" :class="{ after_search: search_query }">
     <div class="header-title">
       <strong v-if="!search_query">Step 1. 키워드 검색</strong>
       <strong v-else>"{{ search_query }}"로 검색한 결과입니다.</strong>
     </div>
-    <search-box :is_search="is_search" />
+    <search-box :class="{ after_search: search_query }" />
   </header>
 </template>
 

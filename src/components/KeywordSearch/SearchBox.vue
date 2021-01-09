@@ -1,5 +1,5 @@
 <template>
-  <div class="search-box" :class="{ after_search: is_search }">
+  <div class="search-box">
     <input
       type="text"
       role="searchbox"
@@ -26,12 +26,6 @@
         },
         search_query: ""
       };
-    },
-    props: {
-      is_search: {
-        type: Boolean,
-        default: false
-      }
     },
     methods: {
       ...mapActions(["go_search"])
