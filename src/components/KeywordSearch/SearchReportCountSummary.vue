@@ -73,8 +73,8 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 12px;
-      font-size: 16px;
+      padding: 14px;
+      font-size: 14px;
       box-sizing: border-box;
 
       [class$="_ratio"] {

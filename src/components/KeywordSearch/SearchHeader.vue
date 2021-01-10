@@ -41,7 +41,7 @@
     padding: 26px 32px;
     .header-title {
       padding: 10px 0;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 </style>

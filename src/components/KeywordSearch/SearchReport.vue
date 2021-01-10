@@ -53,7 +53,7 @@
 
     .report-title {
       padding: 20px 0;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .report-body {
