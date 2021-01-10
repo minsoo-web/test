@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 30px 0;
     min-height: 88vh;
   }
   .keyword-search.after_search {

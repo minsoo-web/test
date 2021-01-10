@@ -2,19 +2,17 @@
   <div class="search-report-market-trend box">
     <market-trend-comp />
     <market-trend-ad />
-    <div class="shop-keyword_indicator" role="rowgroup">
-      <div role="rowheader"></div>
-      <div class="content-wrapper"></div>
-    </div>
+    <market-trend-keyword />
   </div>
 </template>
 
 <script>
   import MarketTrendAd from "./MarketTrendAd.vue";
   import MarketTrendComp from "./MarketTrendComp.vue";
+  import MarketTrendKeyword from "./MarketTrendKeyword.vue";
   export default {
     name: "search-report-market-trend",
-    components: { MarketTrendComp, MarketTrendAd }
+    components: { MarketTrendComp, MarketTrendAd, MarketTrendKeyword }
   };
 </script>
 
@@ -25,12 +23,13 @@
       display: flex;
       min-height: 120px;
 
-      [role="rowheader"] {
+      & > [role="rowheader"] {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 120px;
+        border-right: 1px solid #e7e8ef;
 
         p {
           font-size: 14px;
@@ -41,13 +40,12 @@
         }
       }
 
-      .content-wrapper {
+      & > .content-wrapper {
         flex: 1;
-        border-left: 1px solid;
         padding: 14px 0 0 24px;
       }
       & + [class$="_indicator"] {
-        border-top: 1px solid;
+        border-top: 1px solid #e7e8ef;
       }
     }
   }

@@ -4,7 +4,7 @@
       <span>로고</span>
     </div>
     <ul class="nav-list">
-      <li><a href="#">키워드 분석</a></li>
+      <li><router-link to="/">키워드 분석</router-link></li>
     </ul>
   </nav>
 </template>
@@ -22,13 +22,13 @@
     left: 0;
     width: 240px;
     height: 100vh;
-    border-right: 1px solid;
+    border-right: 1px solid #e7e8ef;
     z-index: 99;
     background-color: #fff;
 
     .logo-wrapper {
       padding: 17px 20px;
-      border-bottom: 1px solid;
+      border-bottom: 1px solid #e7e8ef;
       font-size: 20px;
     }
 

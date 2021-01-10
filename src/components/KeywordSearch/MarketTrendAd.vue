@@ -1,7 +1,7 @@
 <template>
   <div class="comp_indicator" role="rowgroup">
     <div role="rowheader">
-      <p class="big-title">나쁨</p>
+      <p class="big-title">-</p>
       <p>광고 효율 지표</p>
     </div>
     <div class="content-wrapper">

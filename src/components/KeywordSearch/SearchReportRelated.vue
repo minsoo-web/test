@@ -58,12 +58,12 @@
     watch: {
       is_search() {
         // 재검색이 이루어지면 초기화
-        this.show_related_number = 10;
+        this.show_related_number = 13;
       }
     },
     data() {
       return {
-        show_related_number: 10
+        show_related_number: 13
       };
     },
     methods: {

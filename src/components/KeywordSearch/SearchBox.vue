@@ -41,7 +41,7 @@
     height: 82px;
     padding-right: 18px;
 
-    border: 1px solid #ffd400;
+    border: 1px solid #eac100;
     box-sizing: border-box;
     border-radius: 3px;
     input {

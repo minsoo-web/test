@@ -73,7 +73,7 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 15px;
+      padding: 12px;
       font-size: 16px;
       box-sizing: border-box;
 

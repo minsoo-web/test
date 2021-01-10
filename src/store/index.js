@@ -15,7 +15,9 @@ export default new Vuex.Store({
     count_summary: null,
     keyword_related: null,
     keyword_compTotal_indicator: null, // 경쟁 종합 지표 객체
-    keyword_adTotal_indicator: null // 광고 효율 지표 객체
+    keyword_adTotal_indicator: null, // 광고 효율 지표 객체
+    keyword_tabList: null,
+    keyword_sectionList: null
   },
   mutations: {
     set_search_state(state, payload) {
@@ -42,6 +44,12 @@ export default new Vuex.Store({
     },
     set_adIdx(state, payload) {
       state.keyword_adTotal_indicator = payload;
+    },
+    set_tabList(state, payload) {
+      state.keyword_tabList = payload;
+    },
+    set_sectionList(state, payload) {
+      state.keyword_sectionList = payload;
     }
   },
   actions: {
@@ -75,6 +83,11 @@ export default new Vuex.Store({
 
           // 광고 효율 지표
           commit("set_adIdx", res.data.adEfficiencyIdx);
+
+          // 쇼핑 키워드 지표 (tab)
+          commit("set_tabList", res.data.tabList);
+          // 쇼핑 키워드 지표 (section)
+          commit("set_sectionList", res.data.sectionList);
 
           console.log(res);
           commit("set_search_query", query);
