@@ -73,10 +73,10 @@ export default new Vuex.Store({
           commit("set_total_count", res.data.totalCount);
 
           // count_summary
-          commit("set_countSummary", res.data.relKeywordStat);
+          commit("set_countSummary", res.data.keywordStat);
 
           // 연관 검색어
-          commit("set_related", res.data.relatedTags);
+          commit("set_related", res.data.relKeywords);
 
           // 경쟁 종합 지표
           commit("set_compIdx", res.data.compTotalIdx);

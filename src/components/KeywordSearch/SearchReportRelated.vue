@@ -17,9 +17,9 @@
           <tr
             v-for="(keyword, index) in keyword_related"
             v-show="index < show_related_number"
-            :key="keyword.tag + index"
+            :key="keyword.name + index"
           >
-            <td>{{ keyword.tag }}</td>
+            <td>{{ keyword.name }}</td>
             <td>{{ keyword.searchCount }}</td>
             <td>{{ keyword.productCount }}</td>
           </tr>
